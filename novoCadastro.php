@@ -31,7 +31,7 @@
                 <input type="text" name="telefone" id="telefone">
             </div>
             <button type="submit" class="btn">Cadastrar</button>
-            <a href="index.php"><button type="submit" class="btn green">Voltar ao menu</button></a>
+            <a href="index.php" button type="submit" class="btn green">Voltar ao menu</a>
         </form>
     </div>
     </div>
