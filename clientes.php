@@ -11,13 +11,14 @@
 <title>Clientes - QUIMIS</title>
 </head>
 <body>
-    <a href="cadastrarCliente.php" class="btn-floating  btn-large waves-effect waves-light"><i class="material-icons">add</i></a>
     <div class="row">
         <div class="center-align">
-            <h3 class="light">Clientes cadastrados</h3></br></br>
+            <h3 class="light">Buscar clientes cadastrados</h3></br></br>
             <form method="POST" action="busca.php">
                 <div class="col s12 m6 push-m3 ">
                     <input type="text" name="busca" id="busca" placeholder="Buscar cliente cadastrado pelo nome">
+                    <a type="submit"class="btn-floating btn-large waves-effect waves-light orange darken"><i class="material-icons">search</i></a>
+                    <a href="cadastrarCliente.php" class="btn-floating  btn-large waves-effect waves-light orange darken"><i class="material-icons">add</i></a>
                 </div>
             </form>
         </div>
