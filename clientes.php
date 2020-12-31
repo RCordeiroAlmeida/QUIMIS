@@ -17,7 +17,7 @@
             <form method="POST" action="busca.php">
                 <div class="col s12 m6 push-m3 ">
                     <input type="text" name="busca" id="busca" placeholder="Buscar cliente cadastrado pelo nome">
-                    <a type="submit"class="btn-floating btn-large waves-effect waves-light orange darken"><i class="material-icons">search</i></a>
+                    <button type="submit" class="btn-floating btn-large waves-effect waves-light orange darken"><i class="material-icons">search</i></button>
                     <a href="cadastrarCliente.php" class="btn-floating  btn-large waves-effect waves-light orange darken"><i class="material-icons">add</i></a>
                 </div>
             </form>

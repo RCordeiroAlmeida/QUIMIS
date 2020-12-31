@@ -63,8 +63,9 @@
                 <input type="text" name="cidade" id="cidade">
             </div>
             <div class="input-field col s12">
-                <label for="uf">Estado</label>
-                    <select id="uf">
+                <label for="uf">Estado</label></br></br>
+                    <select class='browser-default' id='uf' name = 'uf'>
+                        <option value="" disabled selected>Selecione um estado</option>
                         <option value="AC">Acre</option>
                         <option value="AL">Alagoas</option>
                         <option value="AP">Amapá</option>

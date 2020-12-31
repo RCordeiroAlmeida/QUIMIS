@@ -1,5 +1,6 @@
 <?php
     include_once 'banco/conexao.php';
+    //print_r($_POST);exit;
     $busca = $_POST['busca'];
     //echo $busca;
     $result_busca = "SELECT * FROM cliente WHERE nome LIKE '%$busca%'";
