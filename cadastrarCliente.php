@@ -13,7 +13,7 @@
     <div class="row">
     <div class="col s12 m6 push-m3 ">
         <h3 class="light">Novo cadastro</h3>
-        <form action="salva.php" method="POST">
+        <form action="salvaCliente.php" method="POST">
             <div class="input-field col s12">
                 <label for="nome">Nome</label>
                 <input type="text" name="nome" id="nome">

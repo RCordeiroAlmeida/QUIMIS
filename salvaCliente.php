@@ -18,7 +18,7 @@
 
 
     $query = "INSERT INTO cliente (nome, cnpj, ie, telefone, celular, email, cep, logradouro, numero, complemento, cidade, UF) 
-    VALUES('$nome','$cnpj','$ie','$tel','$cel','$email','$cep','$log','$num','$bairro','$city','$estado')";
+    VALUES('$empresa','$cnpj','$ie','$tel','$cel','$email','$cep','$log','$num','$bairro','$city','$estado')";
 
     $insert = mysqli_query($conexao, $query);
         

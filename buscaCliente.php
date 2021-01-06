@@ -43,6 +43,8 @@
             echo "Cidade: ".$cidade;
             echo "<br/><br>";
             echo "UF: ".$UF;
+            echo "<br/><br/>";
+            echo "<hr>";
         }   
     }else{
         echo "Nenhum cliente cadastrado corresponde à busca: ".$busca;
