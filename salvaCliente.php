@@ -9,7 +9,7 @@
     $cel = $_POST['celular']; 
     $email = $_POST['email'];
     $cep = $_POST['cep'];
-    $log = $_POST['logradouro'];
+    $rua = $_POST['rua'];
     $num = $_POST['numero'];
     $comp = $_POST['complemento']; 
     $bairro = $_POST['bairro'];
@@ -17,11 +17,12 @@
     $estado = $_POST['uf'];
 
 
-    $query = "INSERT INTO cliente (nome, cnpj, ie, telefone, celular, email, cep, logradouro, numero, complemento, cidade, UF) 
-    VALUES('$empresa','$cnpj','$ie','$tel','$cel','$email','$cep','$log','$num','$bairro','$city','$estado')";
+    $query = "INSERT INTO cliente (nome, cnpj, ie, telefone, celular, email, cep, logradouro, numero, complemento, bairro, cidade, UF) 
+    VALUES('$empresa','$cnpj','$ie','$tel','$cel','$email','$cep','$rua','$num', '$comp','$bairro','$city','$estado')";
+    //echo $query;exit;
 
     $insert = mysqli_query($conexao, $query);
-        
+    
     if($insert == 1){
         echo "
                 <script>
