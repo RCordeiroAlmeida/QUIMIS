@@ -15,6 +15,16 @@
     $bairro = $_POST['bairro'];
     $city = $_POST['cidade']; 
     $estado = $_POST['uf'];
+
+    while($tel=="" && $cel=="" && $email==''){
+        echo"
+            <script>
+                alert('Você precisa informar pelo menos um meio de contato!');
+                location.href='cadastrarCliente.php';
+            </script>
+        ";
+
+    }
     
     $querycheck = "SELECT cnpj FROM cliente WHERE cnpj='$cnpj'";
     //echo $querycheck;exit;
