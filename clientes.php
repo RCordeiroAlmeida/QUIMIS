@@ -82,23 +82,25 @@
                 <table>
                     <tbody id = 'myTable'>
                         <tr>
-                            <td>$nome</td>
-                            <td>$cnpj</td>
-                            <td>$ie</td>
-                            <td>$tel</td>
-                            <td>$cel</td>
-                            <td>$email</td>
-                            <td>$cep</td>
-                            <td>$log</td>
-                            <td>$num</td>
-                            <td>$comp</td>
-                            <td>$bairro</td>
-                            <td>$cidade</td>
-                            <td>$uf</td>
-                            <td>
-                                <input type = 'hidden' name = 'id_cliente' value = '$id'/>
-                                <button type='submit' class='btn waves-effect waves-light'><i class='material-icons'>edit</i></button>
-                            </td>
+                            <form action = 'editarCliente.php' method = 'POST'>
+                                <td>$nome</td>
+                                <td>$cnpj</td>
+                                <td>$ie</td>
+                                <td>$tel</td>
+                                <td>$cel</td>
+                                <td>$email</td>
+                                <td>$cep</td>
+                                <td>$log</td>
+                                <td>$num</td>
+                                <td>$comp</td>
+                                <td>$bairro</td>
+                                <td>$cidade</td>
+                                <td>$uf</td>
+                                <td>
+                                    <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                    <button type='submit' class='btn waves-effect waves-light'><i class='material-icons'>edit</i></button>
+                                </td>
+                            </form>
                             <td>
                                 <form action = 'excluirCliente.php' method = POST>
                                     <input type = 'hidden' name = 'id_cliente' value = '$id'/>

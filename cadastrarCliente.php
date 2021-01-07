@@ -118,7 +118,7 @@
             </div>
             <div class="input-field col s12">   
                 <label for="numero">Número</label>
-                <input type="text" name="numero" id="numero"  maxlength="10">
+                <input type="text" name="numero" id="numero"  maxlength="10" required>
             </div>
             <div class="input-field col s12">   
                 <label for="complemento">Complemento</label>
