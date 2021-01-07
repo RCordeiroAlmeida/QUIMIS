@@ -122,7 +122,7 @@
             </div>
             <div class="input-field col s12">   
                 <label for="complemento">Complemento</label>
-                <input type="text" name="complemento" id="complemento">
+                <input type="text" name="complemento" id="complemento" maxlength = "30">
             </div>
             <div class="input-field col s12"> 
                 <input name="bairro" type="text" id="bairro" placeholder="Bairro" readonly/>

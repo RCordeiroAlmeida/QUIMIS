@@ -8,6 +8,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#busca").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
 <title>Clientes - QUIMIS</title>
 </head>
 <body>
@@ -24,6 +35,84 @@
             </form>
         </div>
     </div>
+
+    <?php
+        require_once 'banco/conexao.php';
+        $query = "SELECT * FROM cliente ORDER BY nome ASC";
+        $execut = mysqli_query($conexao,$query);
+
+        echo " 
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>CNPJ</th>
+                        <th>Inscrição Estadual</th>
+                        <th>Telefone</th>
+                        <th>Celular</th>
+                        <th>Email</th>
+                        <th>CEP</th>
+                        <th>Logradouro</th>
+                        <th>Número</th>
+                        <th>Complemento</th>
+                        <th>Bairro</th>
+                        <th>Cidade</th>
+                        <th>Estado</th>
+                        <th>Editar</th>
+                        <th>Excluir</th>
+                    </tr>
+                    </thead>
+                </table>
+            ";
+        while ($dados = mysqli_fetch_array($execut)){
+            $id = $dados['id_cliente'];
+            $nome = $dados['nome'];
+            $cnpj = $dados['cnpj'];
+            $ie = $dados['ie'];
+            $tel = $dados['telefone'];
+            $cel = $dados['celular'];
+            $email = $dados['email'];
+            $cep = $dados['cep'];
+            $log = $dados['logradouro'];
+            $num = $dados['numero'];
+            $comp = $dados['complemento'];
+            $bairro = $dados['bairro'];
+            $cidade = $dados['cidade'];
+            $uf = $dados['UF'];
+
+            echo"
+                <table>
+                    <tbody id = 'myTable'>
+                        <tr>
+                            <td>$nome</td>
+                            <td>$cnpj</td>
+                            <td>$ie</td>
+                            <td>$tel</td>
+                            <td>$cel</td>
+                            <td>$email</td>
+                            <td>$cep</td>
+                            <td>$log</td>
+                            <td>$num</td>
+                            <td>$comp</td>
+                            <td>$bairro</td>
+                            <td>$cidade</td>
+                            <td>$uf</td>
+                            <td>
+                                <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                <button type='submit' class='btn waves-effect waves-light'><i class='material-icons'>edit</i></button>
+                            </td>
+                            <td>
+                                <form action = 'excluirCliente.php' method = POST>
+                                    <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                    <button type='submit' class='btn waves-effect waves-light'><i class='material-icons'>delete</i></button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>            
+            ";
+        }
+    ?>
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -31,3 +120,5 @@
     <script>M.AutoInit();</script>
 </body>
 </html>
+
+

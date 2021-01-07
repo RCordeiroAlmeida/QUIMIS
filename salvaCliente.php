@@ -15,28 +15,39 @@
     $bairro = $_POST['bairro'];
     $city = $_POST['cidade']; 
     $estado = $_POST['uf'];
-
-
-    $query = "INSERT INTO cliente (nome, cnpj, ie, telefone, celular, email, cep, logradouro, numero, complemento, bairro, cidade, UF) 
-    VALUES('$empresa','$cnpj','$ie','$tel','$cel','$email','$cep','$rua','$num', '$comp','$bairro','$city','$estado')";
-    //echo $query;exit;
-
-    $insert = mysqli_query($conexao, $query);
     
-    if($insert == 1){
-        echo "
-                <script>
-                    alert('Cliente cadastrado com sucesso !!!');
-                    location.href='cadastrarCliente.php';
-                </script>
-            ";
+    $querycheck = "SELECT cnpj FROM cliente WHERE cnpj='$cnpj'";
+    //echo $querycheck;exit;
+    $clientes = mysqli_query($conexao,$querycheck);
+    $igual = mysqli_num_rows($clientes);
+ 
+    if ($igual==1) {
+         echo "<script>
+                     alert('Esse CNPJ já está registrado no sistema!');
+                     location.href='cadastrarCliente.php';
+                 </script>";exit;
     }else{
-        echo "
-                <script>
-                    alert('Erro ao cadastrar novo cliente!');
-                    location.href='cadastrarCliente.php';
-                </script>
-            ";
+        $query = "INSERT INTO cliente (nome, cnpj, ie, telefone, celular, email, cep, logradouro, numero, complemento, bairro, cidade, UF) 
+        VALUES('$empresa','$cnpj','$ie','$tel','$cel','$email','$cep','$rua','$num', '$comp','$bairro','$city','$estado')";
+        //echo $query;exit;
+
+        $insert = mysqli_query($conexao, $query);
+        
+        if($insert == 1){
+            echo "
+                    <script>
+                        alert('Cliente cadastrado com sucesso !!!');
+                        location.href='cadastrarCliente.php';
+                    </script>
+                ";
+        }else{
+            echo "
+                    <script>
+                        alert('Erro ao cadastrar novo cliente!');
+                        location.href='cadastrarCliente.php';
+                    </script>
+                ";
+        }
     }
 
 ?>
