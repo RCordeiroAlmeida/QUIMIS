@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 27-Dez-2020 às 18:09
+-- Generation Time: 12-Jan-2021 às 16:16
 -- Versão do servidor: 5.7.25
 -- versão do PHP: 7.1.26
 
@@ -40,9 +40,18 @@ CREATE TABLE `cliente` (
   `logradouro` varchar(255) NOT NULL,
   `numero` int(10) NOT NULL,
   `complemento` varchar(255) NOT NULL,
+  `bairro` varchar(255) NOT NULL,
   `cidade` varchar(255) NOT NULL,
   `UF` char(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `cliente`
+--
+
+INSERT INTO `cliente` (`id_cliente`, `nome`, `cnpj`, `ie`, `telefone`, `celular`, `email`, `cep`, `logradouro`, `numero`, `complemento`, `bairro`, `cidade`, `UF`) VALUES
+(6, 'Rafa', '52.661.834/8091362', '3366', '34498867', '952793798', 'rafaelcordeiro299@gmail.com', '08571000', 'Avenida Presidente Tancredo Neves', 363, '', 'Estação', 'Itaquaquecetuba', 'SP'),
+(8, 'Rafael', '11.111.111/1011111', '22333', '40028922', '952793798', 'rafael@gmail.com', '08571000', 'Avenida Presidente Tancredo Neves', 363, '', 'Estação', 'Itaquaquecetuba', 'SP');
 
 -- --------------------------------------------------------
 
@@ -78,9 +87,16 @@ CREATE TABLE `pedido` (
 CREATE TABLE `produtos` (
   `id_produto` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  `validade` date NOT NULL,
-  `formula` varchar(255) NOT NULL
+  `descricaoProd` varchar(255) NOT NULL,
+  `formula` varchar(255) NOT NULL,
+  `estoqueMin` varchar(255) NOT NULL,
+  `unidadeMed` varchar(255) NOT NULL,
+  `fornecedor` varchar(255) NOT NULL,
+  `Fabricante` varchar(255) NOT NULL,
+  `precoMed` varchar(255) NOT NULL,
+  `lote` varchar(255) NOT NULL,
+  `descricaoTec` varchar(255) NOT NULL,
+  `obs` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -115,7 +131,7 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `pedido`
