@@ -35,7 +35,7 @@
         if ($reg>0){
             echo "<script>
                     alert('Opa, esse CNPJ já está registrado na base de dados. Não é permitido cadastrar o CNPJ mais de uma vez!');
-                    location.href='clientes.php';
+                    location.href='cliente/clientes.php';
                 </script>
             ";
         }else{
@@ -45,13 +45,13 @@
             if($update==1){
                 echo "<script>
                     alert('Alterações salvas com sucesso!');
-                    location.href='clientes.php';
+                    location.href='cliente/clientes.php';
                 </script>
                 ";
             }else{
                 echo "<script>
                     alert('Ocorreu um erro...');
-                    location.href='clientes.php';
+                    location.href='cliente/clientes.php';
                 </script>
                 ";
             }

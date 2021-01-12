@@ -1,5 +1,5 @@
 <?php
-    require_once "banco/conexao.php";
+    require_once "../banco/conexao.php";
     //var_dump($_POST);
     
     $empresa = $_POST['nome']; 
@@ -20,7 +20,7 @@
         echo"
             <script>
                 alert('Você precisa informar pelo menos um meio de contato!');
-                location.href='cadastrarCliente.php';
+                location.href='cliente/cadastrarCliente.php';
             </script>
         ";
 

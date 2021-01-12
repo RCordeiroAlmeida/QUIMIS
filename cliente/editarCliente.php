@@ -12,7 +12,7 @@
 <body>
 
     <?php
-        require_once 'banco/conexao.php';
+        require_once '../banco/conexao.php';
         //print_r($_POST);
 
         $id = $_POST['id_cliente'];
@@ -44,7 +44,7 @@
                     <div class='row'>
                     <div class='col s12 m6 push-m3 '>
                         <h3 class='light'>Editar dados do cliente</h3>
-                        <form action = 'saveEdit.php' method = 'POST'>
+                        <form action = '../saveEdit.php' method = 'POST'>
                             <div class='input-field col s12'>
                                 <label for='nome'>Nome</label>
                                 <input type='text' name='nome' id='nome' maxlength = '50' value='$nome' required>

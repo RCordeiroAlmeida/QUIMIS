@@ -13,9 +13,9 @@
     <div class="row">
         <div class="center-align">
             <h3 class="light">Menu principal</h3></br></br>
-            <a href="clientes.php" class="btn-large light blue">Clientes</a></br></br>
-            <a href="gerenciarEstoque.php" class="btn-large light blue">Estoque</a></br></br>
-            <a href="pedidos.php" class="btn-large light blue">Pedidos</a></br></br>
+            <a href="cliente/clientes.php" class="btn-large light orange darken">Clientes</a></br></br>
+            <a href="estoque/gerenciarEstoque.php" class="btn-large green">Estoque</a></br></br>
+            <a href="pedidos/pedidos.php" class="btn-large blue">Pedidos</a></br></br>
         </div>
     </div>
     <!--JavaScript at end of body for optimized loading-->

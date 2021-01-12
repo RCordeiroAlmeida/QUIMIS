@@ -12,7 +12,7 @@
 <body>
     <div class="row">
     <div class="col s12 m6 push-m3 ">
-        <h3 class="light">Novo cadastro</h3>
+        <h3 class="light">Novo cliente</h3>
         <form action="salvaCliente.php" method="POST">
             <div class="input-field col s12">
                 <label for="nome">Nome</label>
@@ -164,7 +164,7 @@
                     </select>
             </div>
             <button type="submit" class="btn">Cadastrar</button>
-            <a href="index.php" button type="submit" class="btn green">Voltar ao menu</a>
+            <a href="../index.php" button type="submit" class="btn green">Voltar ao menu</a>
         </form>
     </div>
     </div>
