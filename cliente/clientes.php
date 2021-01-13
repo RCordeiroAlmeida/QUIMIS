@@ -116,8 +116,18 @@
                                         <td>
                                             <form action = 'excluirCliente.php' method = POST>
                                                 <input type = 'hidden' name = 'id_cliente' value = '$id'/>
-                                                    <button type='submit' class='btn waves-effect waves-light red'><i class='material-icons'>delete</i></button>
+                                                <a class='waves-effect waves-light btn modal-trigger' href='#modal1'><i class='material-icons'>delete</i></a>
                                             </form>
+                                            <div id='modal1' class='modal'>
+                                                <div class='modal-content'>
+                                                    <h4>ATENÇÃO</h4>
+                                                        <p>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse cliente</p>
+                                                </div>
+                                                <div class='modal-footer'>
+                                                    <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</a>
+                                                    <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
+                                                </div>
+                                            </div>
                                         </td>
                                     </tr>
                                 </tbody>
