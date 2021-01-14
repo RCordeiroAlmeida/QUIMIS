@@ -47,7 +47,7 @@
             echo "
                     <script>
                         alert('Cliente cadastrado com sucesso !!!');
-                        location.href='cadastrarCliente.php';
+                        location.href='clientes.php';
                     </script>
                 ";
         }else{
