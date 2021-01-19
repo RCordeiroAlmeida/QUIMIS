@@ -18,7 +18,7 @@
         $id = $_POST['id_produto'];
         //echo $id;
 
-        $query = "SELECT * FROM produtos WHERE id_produto=$id";
+        $query = "SELECT * FROM produtos WHERE id_produto = $id";
         //echo $query;
         $resultado_busca = mysqli_query($conexao, $query);
         $row = mysqli_num_rows($resultado_busca);
@@ -27,83 +27,76 @@
                 //var_dump($dados);exit;
                 $id = $dados['id_produto'];
                 $nome = $dados['nome'];
-                $descricaoProd = $dados['descricaoProd'];
-                $formula = $dados['formula'];
-                $estoqueMin = $dados['estoqueMin'];
-                $unidadeMed = $dados['unidadeMed'];
+                $desc = $dados['descricaoProd'];
+                $form = $dados['formula'];
+                $estoq = $dados['estoqueMin'];
+                $uni = $dados ['unidadeMed'];
                 $fornecedor = $dados['fornecedor'];
-                $fabricante = $dados['fabricante'];
-                $precoMed = $dados['precoMed'];
+                $fab = $dados['Fabricante'];
+                $preco = $dados['precoMed'];
                 $lote = $dados['lote'];
-                $descricaoTec = $dados['descricaoTec'];
+                $desctec = $dados['descricaoTec'];
                 $obs = $dados['obs'];
 
                 echo "
                     <div class='row'>
-                    <div class='col s12 m6 push-m3 '>
-                        <h3 class='light'>Visualizar dados do Produto</h3>
-                        <form action = '../saveEdit.php' method = 'POST'>
-                        </div>
-                            <div class='input-field col s12'>
-                                <label for ='id'></label>
-                                <input type='text' name='id' id='id' value='$id' disabled='disabled'>
-                            </div>
-                            <div class='input-field col s12'>
-                                <label for='nome'>Nome</label>
-                                <input type='text' name='nome' id='nome' maxlength = '50' value='$nome' disabled='disabled'>
-                            </div>
-                            <div class='input-field col s12'>
-                                <label for ='descricaoProd'></label>
-                                <input type='text' name='descricaoProd' id='descricaoProd' value='$descricaoProd' disabled='disabled'>
-                            </div>
-                            </div>
-                            <div class='input-field col s12'>
-                                <label for ='formula'></label>
-                                <input type='text' name='formula' id='formula' value='$formula' disabled='disabled'>
-                            </div>
-                            </div>
-                            <div class='input-field col s12'>
-                                <label for ='estoqueMin'></label>
-                                <input type='text' name='estoqueMin' id='estoqueMin' value='$estoqueMin' disabled='disabled'>
-                            </div>
-                            </div>
-                            <div class='input-field col s12'>
-                                <label for ='unidadeMed'></label>
-                                <input type='text' name='unidadeMed' id='unidadeMed' value='$unidadeMed' disabled='disabled'>
-                            </div>
-                            </div>
-                            <div class='input-field col s12'>
-                                <label for ='fornecedor'></label>
-                                <input type='text' name='fornecedor' id='fornecedor' value='$fornecedor' disabled='disabled'>
-                            </div>
-                            </div>
-                            <div class='input-field col s12'>
-                                <label for =''></label>
-                                <input type='text' name='fabricante' id='fabricante' value='$fabricante' disabled='disabled'>
-                            </div>
-                            </div>
-                            <div class='input-field col s12'>
-                                <label for ='precoMed'></label>
-                                <input type='text' name='precoMed' id='precoMed' value='$precoMed' disabled='disabled'>
-                            </div>
-                            </div>
-                            <div class='input-field col s12'>
-                                <label for ='lote'></label>
-                                <input type='text' name='lote' id='lote' value='$lote' disabled='disabled'>
-                            </div>
-                            </div>
-                            <div class='input-field col s12'>
-                                <label for ='descricaoTec'></label>
-                                <input type='text' name='descricaoTec' id='descricaoTec' value='$descricaoTec' disabled='disabled'>
-                            </div>
-                            </div>
-                            <div class='input-field col s12'>
-                                <label for ='obs'></label>
-                                <input type='text' name='obs' id='obs' value='$obs' disabled='disabled'>
-                            </div>
+                        <div class='col s12 m6 push-m3 '>
+                            <h3 class='light'>Visualizar dados do Produto</h3>
+                            <form action = '../saveEdit.php' method = 'POST'>
+                                <div class='input-field col s12'>
+                                    <label for ='id'>Código</label>
+                                    <input type='text' name='id' id='id' value='$id' disabled='disabled'>
+                                </div>
+                                <div class='input-field col s12'>
+                                    <label for='nome'>Nome</label>
+                                    <input type='text' name='nome' id='nome' maxlength = '50' value='$nome' disabled='disabled'>
+                                </div>
+                                <div class='input-field col s12'>
+                                    <label for ='desc'>Descrição do produto</label>
+                                    <input type='text' name='desc' id='desc' value='$desc' disabled='disabled'>
+                                </div>
+                                <div class='input-field col s12'>
+                                    <label for ='form'>Fórmula</label>
+                                    <input type='text' name='form' id='form' value='$form' disabled='disabled'>
+                                </div>
+                                <div class='input-field col s12'>
+                                    <label for ='estoq'>Estoque mínimo</label>
+                                    <input type='text' name='estoq' id='estoq' value='$estoq' disabled='disabled'>
+                                </div>
+                                <div class='input-field col s12'>
+                                    <label for ='uni'>Unidade média</label>
+                                    <input type='text' name='uni' id='uni' value='$uni' disabled='disabled'>
+                                </div>
+                                <div class='input-field col s12'>
+                                    <label for ='fornecedor'>Fornecedor</label>
+                                    <input type='text' name='fornecedor' id='fornecedor' value='$fornecedor' disabled='disabled'>
+                                </div>
+                                <div class='input-field col s12'>
+                                    <label for ='fab'>Fabricante</label>
+                                    <input type='text' name='fab' id='fab' value='$fab' disabled='disabled'>
+                                </div>
+                                <div class='input-field col s12'>
+                                    <label for ='preco'>Preço médio</label>
+                                    <input type='text' name='preco' id='preco' value='$preco' disabled='disabled'>
+                                </div>
+                                <div class='input-field col s12'>
+                                    <label for ='lote'>Lote</label>
+                                    <input type='text' name='lote' id='lote' value='$lote' disabled='disabled'>
+                                </div>
+                                <div class='input-field col s12'>
+                                    <label for ='desctec'>Descrição técnica</label>
+                                    <input type='text' name='desctec' id='desctec' value='$desctec' disabled='disabled'>
+                                </div>
+                                <div class='input-field col s12'>
+                                    <label for ='obs'>Observação</label>
+                                    <input type='text' name='obs' id='obs' value='$obs' disabled='disabled'>
+                                </div>
 
-                        </form>
-                        <a href='clientes.php' class=' btn waves-effect waves light red'><i class='material-icons left'>arrow_back</i>Voltar</a>
+                            </form>
+
+                            <a href='clientes.php' class=' btn waves-effect waves light red'><i class='material-icons left'>arrow_back</i>Voltar</a>
+                        </div>
+                    </div>
                     ";
 
             }
