@@ -20,7 +20,7 @@
         //echo $id;
 
         $query = "SELECT * FROM cliente WHERE id_cliente=$id";
-        //echo $query;
+        //echo $query;exit;
         $resultado_busca = mysqli_query($conexao, $query);
         $row = mysqli_num_rows($resultado_busca);
         if($row > 0){
@@ -45,7 +45,7 @@
                     <div class='row'>
                     <div class='col s12 m6 push-m3 '>
                         <h3 class='light'>Editar dados do cliente</h3>
-                        <form action = '../saveEdit.php' method = 'POST'>
+                        <form action = 'saveEdit.php' method = 'POST'>
                             <div class='input-field col s12'>
                                 <label for='nome'>Nome</label>
                                 <input type='text' name='nome' id='nome' maxlength = '50' value='$nome' required>
@@ -128,10 +128,12 @@
                                 <option value='TO'>Tocantins</option>
                                 </select>
                             </div>
-                            <input type = 'hidden' name = 'id_cliente' value = '$id'/>
-                            <button type='submit' class='btn waves-effect waves-light'><i class='material-icons left'>edit</i>Salvar alterações</button>
-                        </form>
-                        <a href='clientes.php' class=' btn waves-effect waves light red'><i class='material-icons left'>arrow_back</i>Voltar</a>
+                            <div class='input-field col s12'>
+                                <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                <button type='submit' class='btn waves-effect waves-light'><i class='material-icons left'>edit</i>Salvar alterações</button>
+                                <a href='clientes.php' class=' btn waves-effect waves light red'><i class='material-icons left'>arrow_back</i>Voltar</a>
+                            </div>
+                        </form>   
                     ";
 
             }
