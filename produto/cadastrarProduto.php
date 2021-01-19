@@ -20,11 +20,11 @@
             </div>
             <div class="input-field col s12">
                 <label for="descricaoProd">Descrição do produto</label>
-                <textarea id="descricacaoProd" class="materialize-textarea"></textarea>
+                <textarea id="descricaoProd" name = "descricaoProd" class="materialize-textarea"></textarea>
             </div>
             <div class="input-field col s12">
                 <label for="formula">Fórmula</label>
-                <textarea id="formula" class="materialize-textarea"></textarea>
+                <textarea id="formula" name= 'formula' class="materialize-textarea"></textarea>
             </div>
             <div class="input-field col s12">
                 <label for="estoqueMin">Estoque mínimo</label>
@@ -52,11 +52,11 @@
             </div>
             <div class="input-field col s12">
                 <label for="descricaoTec">Descrição técnica</label>
-                <textarea id="descricacaoTec" class="materialize-textarea"></textarea>
+                <textarea id="descricaoTec" name = 'descricaoTec' class="materialize-textarea"></textarea>
             </div>
             <div class="input-field col s12">
                 <label for="obs">Observação</label>
-                <textarea id="obs" class="materialize-textarea"></textarea>
+                <textarea id="obs" name = "obs" class="materialize-textarea"></textarea>
             </div>
             <div class="input-field col s12">
                 <a href="../index.php" button type="submit" class="btn green">Voltar ao menu</a>

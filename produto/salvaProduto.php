@@ -25,16 +25,17 @@
                     location.href=cadastrarProduto.php';
                 </script>";exit;
     }else{
+
         $query = "INSERT INTO produtos (nome, descricaoProd, formula, estoqueMin, unidadeMed, fornecedor, fabricante, precoMed, lote, descricaoTec, obs)
-        VALUES('$nome', '$descricaoProd', '$formula', '$estoqueMin, '$unidadeMed', '$fornecedor', '$fabricante', '$precoMed', '$lote', '$descricaoTec', '$obs')";
-        echo $query;exit;
+        VALUES('$nome', '$descricaoProd', '$formula', '$estoqueMin', '$unidadeMed', '$fornecedor', '$fabricante', '$precoMed', '$lote', '$descricaoTec', '$obs')";
+        //echo $query;exit;
 
         $insert = mysqli_query($conexao, $query);
 
         if($insert == 1){
             echo"
                     <script>
-                        alert('Produto cadastrado com sucesso!!!);
+                        alert('Produto cadastrado com sucesso!!!');
                         location.href='cadastrarProd.php';
                     </script>
                 ";

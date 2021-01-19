@@ -30,7 +30,6 @@
                     <a href="cadastrarCliente.php" class="btn-floating  btn-large waves-effect waves-light orange darken"><i class="material-icons">add</i></a>
                     <a href="../index.php" class="btn-floating btn-large waves-effect waves light orange darken"><i class="material-icons">arrow_back</i></a>
                 </div>
-            </form>
         </div>
     </div>
 
@@ -114,18 +113,20 @@
                                             </form>
                                         </td>
                                         <td>
-                                            <form action = 'excluirCliente.php' method = POST>
-                                                <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                            <div>
                                                 <a class='waves-effect waves-light btn modal-trigger' href='#modal1'><i class='material-icons'>delete</i></a>
-                                            </form>
+                                            </div>
                                             <div id='modal1' class='modal'>
                                                 <div class='modal-content'>
                                                     <h4>ATENÇÃO</h4>
                                                         <p>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse cliente</p>
                                                 </div>
                                                 <div class='modal-footer'>
-                                                    <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</a>
-                                                    <a href='#!' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
+                                                <form action = 'excluirCliente.php' method = 'POST'/>
+                                                    <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                                    <button typé = 'submit' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</button>
+                                                    <a href='clientes.php' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
+                                                </form>
                                                 </div>
                                             </div>
                                         </td>
