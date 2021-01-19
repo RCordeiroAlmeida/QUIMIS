@@ -32,88 +32,78 @@
                 </div>
         </div>
     </div>
+    <div class='row'>
+        <table class='highlight centered responsive-table'>
+            <thead>
+                <tr>
+                    <th>Visualizar</th>
+                    <th>Nome</th>
+                    <th>CNPJ</th>
+                    <th>Editar</th>
+                    <th>Pedido</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
 
-    <?php
-        require_once '../banco/conexao.php';
-        $query = "SELECT * FROM cliente ORDER BY nome ASC";
-        $execut = mysqli_query($conexao,$query);
+            <?php
+                require_once '../banco/conexao.php';
+                $query = "SELECT * FROM cliente ORDER BY nome ASC";
+                $execut = mysqli_query($conexao,$query);
+                
+                while ($dados = mysqli_fetch_array($execut)){
+                    $id = $dados['id_cliente'];
+                    $nome = $dados['nome'];
+                    $cnpj = $dados['cnpj'];
 
-        echo "  
-                <div class='row'>
-                      
-                        <table class='centered responsive-table'>
-                            <thead>
-                                <tr>
-                                    <th>Visualizar</th>
-                                    <th>Nome</th>
-                                    <th>CNPJ</th>
-                                    <th>Editar</th>
-                                    <th>Pedido</th>
-                                    <th>Excluir</th>
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
-                </div>
-            ";
-        while ($dados = mysqli_fetch_array($execut)){
-            $id = $dados['id_cliente'];
-            $nome = $dados['nome'];
-            $cnpj = $dados['cnpj'];
-
-            echo"   <div class='row'>
-                        
-                            <table  class= 'centered responsive-table'>
-                                <tbody id = 'myTable'>
-                                    <tr>
-                                        <td>
-                                            <form action='visualizar.php' method='POST'>
+                    echo"   
+                        <tbody id = 'myTable'>
+                            <tr>
+                                <td>
+                                    <form action='visualizar.php' method='POST'>
+                                        <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                        <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
+                                    </form>
+                                </td>
+                                <td>$nome</td>
+                                <td>$cnpj</td>
+                                <td>
+                                    <form action = 'editarCliente.php' method = 'POST'>
+                                        <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                        <button type='submit' class='btn waves-effect waves-light orange darken'><i class='material-icons'>edit</i></button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action = '../pedidos/novoPedido.php' method = 'POST'>
+                                        <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                        <button type='submit' class='btn waves-effect waves-light green'><i class='material-icons'>assignment</i></button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <div>
+                                        <a class='waves-effect waves-light btn modal-trigger red' href='#modal1'><i class='material-icons'>delete</i></a>
+                                    </div>
+                                    <div id='modal1' class='modal'>
+                                        <div class='modal-content'>
+                                            <h3>ATENÇÃO</h3>
+                                            <h5>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse cliente</h5>
+                                        </div>
+                                        <div class='modal-footer'>
+                                            <form action = 'excluirCliente.php' method = 'POST'/>
                                                 <input type = 'hidden' name = 'id_cliente' value = '$id'/>
-                                                <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
+                                                <button type = 'submit' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</button>
+                                                <a href='clientes.php' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
                                             </form>
-                                        </td>
-                                        <form action = 'editarCliente.php' method = 'POST'>
-                                            <td>$nome</td>
-                                            <td>$cnpj</td>
-                                            <td>
-                                                <form action = '' method = 'POST'>
-                                                    <input type = 'hidden' name = 'id_cliente' value = '$id'/>
-                                                        <button type='submit' class='btn waves-effect waves-light orange darken'><i class='material-icons'>edit</i></button>
-                                                </form>
-                                            </td>
-                                        </form>
-                                        <td>
-                                            <form action = '../pedidos/novoPedido.php' method = 'POST'>
-                                                <input type = 'hidden' name = 'id_cliente' value = '$id'/>
-                                                    <button type='submit' class='btn waves-effect waves-light green'><i class='material-icons'>assignment</i></button>
-                                            </form>
-                                        </td>
-                                        <td>
-                                            <div>
-                                                <a class='waves-effect waves-light btn modal-trigger red' href='#modal1'><i class='material-icons'>delete</i></a>
-                                            </div>
-                                            <div id='modal1' class='modal'>
-                                                <div class='modal-content'>
-                                                    <h4>ATENÇÃO</h4>
-                                                        <p>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse cliente</p>
-                                                </div>
-                                                <div class='modal-footer'>
-                                                <form action = 'excluirCliente.php' method = 'POST'/>
-                                                    <input type = 'hidden' name = 'id_cliente' value = '$id'/>
-                                                    <button typé = 'submit' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</button>
-                                                    <a href='clientes.php' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
-                                                </form>
-                                                </div>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table> 
-                        </div>
-                    </div>           
-            ";
-        }
-    ?>
+                                        </div>
+                                    </div>
+                                    </td>
+                                </form
+                            </tr>
+                        </tbody>       
+                    ";
+                }
+            ?>
+        </table>
+    </div>
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>

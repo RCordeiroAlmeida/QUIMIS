@@ -21,7 +21,7 @@
 
     if($igual==1){
         echo "<script>
-                    alert('Este produto já está cadastrado no estoque!);
+                    alert('Este produto já está cadastrado no estoque!');
                     location.href=cadastrarProduto.php';
                 </script>";exit;
     }else{
@@ -36,14 +36,14 @@
             echo"
                     <script>
                         alert('Produto cadastrado com sucesso!!!');
-                        location.href='cadastrarProd.php';
+                        location.href='cadastrarProduto.php';
                     </script>
                 ";
         }else{
             echo"
                     <script>
                         alert('Erro ao cadastrar novo produto!!!');
-                        location.href='cadastrarProd.php';
+                        location.href='cadastrarProduto.php';
                     </script>
                 ";
         }
