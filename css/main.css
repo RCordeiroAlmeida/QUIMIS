@@ -6,3 +6,6 @@ button.btn-floating{
     margin: 15px;
     float: right;
 }
+td{
+    word-break: break-all;
+ }

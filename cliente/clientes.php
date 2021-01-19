@@ -41,25 +41,15 @@
         echo "  
                 <div class='row'>
                       
-                        <table>
+                        <table class='centered responsive-table'>
                             <thead>
                                 <tr>
+                                    <th>Visualizar</th>
                                     <th>Nome</th>
                                     <th>CNPJ</th>
-                                    <th>Inscrição Estadual</th>
-                                    <th>Telefone</th>
-                                    <th>Celular</th>
-                                    <th>Email</th>
-                                    <th>CEP</th>
-                                    <th>Logradouro</th>
-                                    <th>Número</th>
-                                    <th>Complemento</th>
-                                    <th>Bairro</th>
-                                    <th>Cidade</th>
-                                    <th>Estado</th>
                                     <th>Editar</th>
-                                    <th>Excluir</th>
                                     <th>Pedido</th>
+                                    <th>Excluir</th>
                                 </tr>
                             </thead>
                         </table>
@@ -70,40 +60,26 @@
             $id = $dados['id_cliente'];
             $nome = $dados['nome'];
             $cnpj = $dados['cnpj'];
-            $ie = $dados['ie'];
-            $tel = $dados['telefone'];
-            $cel = $dados['celular'];
-            $email = $dados['email'];
-            $cep = $dados['cep'];
-            $log = $dados['logradouro'];
-            $num = $dados['numero'];
-            $comp = $dados['complemento'];
-            $bairro = $dados['bairro'];
-            $cidade = $dados['cidade'];
-            $uf = $dados['UF'];
 
             echo"   <div class='row'>
                         
-                            <table class = 'striped'>
+                            <table  class= 'centered responsive-table'>
                                 <tbody id = 'myTable'>
                                     <tr>
+                                        <td>
+                                            <form action='visualizar.php' method='POST'>
+                                                <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                                <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
+                                            </form>
+                                        </td>
                                         <form action = 'editarCliente.php' method = 'POST'>
                                             <td>$nome</td>
                                             <td>$cnpj</td>
-                                            <td>$ie</td>
-                                            <td>$tel</td>
-                                            <td>$cel</td>
-                                            <td>$email</td>
-                                            <td>$cep</td>
-                                            <td>$log</td>
-                                            <td>$num</td>
-                                            <td>$comp</td>
-                                            <td>$bairro</td>
-                                            <td>$cidade</td>
-                                            <td>$uf</td>
                                             <td>
-                                                <input type = 'hidden' name = 'id_cliente' value = '$id'/>
-                                                <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>edit</i></button>
+                                                <form action = '' method = 'POST'>
+                                                    <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                                        <button type='submit' class='btn waves-effect waves-light orange darken'><i class='material-icons'>edit</i></button>
+                                                </form>
                                             </td>
                                         </form>
                                         <td>
@@ -114,7 +90,7 @@
                                         </td>
                                         <td>
                                             <div>
-                                                <a class='waves-effect waves-light btn modal-trigger' href='#modal1'><i class='material-icons'>delete</i></a>
+                                                <a class='waves-effect waves-light btn modal-trigger red' href='#modal1'><i class='material-icons'>delete</i></a>
                                             </div>
                                             <div id='modal1' class='modal'>
                                                 <div class='modal-content'>

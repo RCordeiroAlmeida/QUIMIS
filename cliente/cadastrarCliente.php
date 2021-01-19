@@ -163,8 +163,8 @@
                         <option value="TO">Tocantins</option>
                     </select>
             </div>
-            <button type="submit" class="btn">Cadastrar</button>
             <a href="../index.php" button type="submit" class="btn green">Voltar ao menu</a>
+            <button type="submit" class="btn blue">Cadastrar</button>
         </form>
     </div>
     </div>
