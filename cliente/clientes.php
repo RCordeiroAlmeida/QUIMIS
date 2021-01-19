@@ -30,7 +30,6 @@
                     <a href="cadastrarCliente.php" class="btn-floating  btn-large waves-effect waves-light orange darken"><i class="material-icons">add</i></a>
                     <a href="../index.php" class="btn-floating btn-large waves-effect waves light orange darken"><i class="material-icons">arrow_back</i></a>
                 </div>
-            </form>
         </div>
     </div>
 
