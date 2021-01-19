@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 12-Jan-2021 às 16:16
+-- Generation Time: 19-Jan-2021 às 19:14
 -- Versão do servidor: 5.7.25
 -- versão do PHP: 7.1.26
 
@@ -50,20 +50,7 @@ CREATE TABLE `cliente` (
 --
 
 INSERT INTO `cliente` (`id_cliente`, `nome`, `cnpj`, `ie`, `telefone`, `celular`, `email`, `cep`, `logradouro`, `numero`, `complemento`, `bairro`, `cidade`, `UF`) VALUES
-(6, 'Rafa', '52.661.834/8091362', '3366', '34498867', '952793798', 'rafaelcordeiro299@gmail.com', '08571000', 'Avenida Presidente Tancredo Neves', 363, '', 'Estação', 'Itaquaquecetuba', 'SP'),
 (8, 'Rafael', '11.111.111/1011111', '22333', '40028922', '952793798', 'rafael@gmail.com', '08571000', 'Avenida Presidente Tancredo Neves', 363, '', 'Estação', 'Itaquaquecetuba', 'SP');
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `estoque`
---
-
-CREATE TABLE `estoque` (
-  `id_produto` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  `obs` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -98,6 +85,13 @@ CREATE TABLE `produtos` (
   `descricaoTec` varchar(255) NOT NULL,
   `obs` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `produtos`
+--
+
+INSERT INTO `produtos` (`id_produto`, `nome`, `descricaoProd`, `formula`, `estoqueMin`, `unidadeMed`, `fornecedor`, `Fabricante`, `precoMed`, `lote`, `descricaoTec`, `obs`) VALUES
+(1, 'agua', 'é agua mano', 'h2o', '1', '50ml', 'mercado', 'eu mesmo', '50', '600', 'é aguaaaaaaaaaaaaaaaaaa', 'nenhuma');
 
 --
 -- Indexes for dumped tables
@@ -143,7 +137,7 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

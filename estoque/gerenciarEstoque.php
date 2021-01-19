@@ -43,17 +43,9 @@
                     <table>
                         <thead>
                             <tr>
+                                <th>Visualizar</th>
                                 <th>Nome</th>
                                 <th>Descrição</th>
-                                <th>Fórmula</th>
-                                <th>Estoque Mínimo</th>
-                                <th>Unidade Média</th>
-                                <th>Fornecedor</th>
-                                <th>Fabricante</th>
-                                <th>Preço</th>
-                                <th>Lote</th>
-                                <th>Descrição Tecnológica</th>
-                                <th>Obs</th>
                                 <th>Editar</th>
                                 <th>Excluir</th>
                             </tr>
@@ -67,33 +59,21 @@
             $id = $dados['id_produto'];
             $nome = $dados['nome'];
             $desc = $dados['descricaoProd'];
-            $form = $dados['formula'];
-            $estoq = $dados['estoqueMin'];
-            $uni = $dados ['unidadeMed'];
-            $fornecedor = $dados['fornecedor'];
-            $fab = $dados['Fabricante'];
-            $preco = $dados['precoMed'];
-            $lote = $dados['lote'];
-            $desctec = $dados['descricaoTec'];
-            $obs = $dados['obs'];
 
             echo " 
                 <div class='row'>
                     <table class = 'striped'>
                         <tbody id = 'myTable'>
                             <tr>
+                                <td>
+                                    <form action='visualizarProd.php' method='POST'>
+                                        <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                        <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
+                                    </form>
+                                </td>
                                 <form action = 'editarProduto.php' method='POST'>
                                     <td>$nome</td>
                                     <td>$desc</td>
-                                    <td>$form</td>
-                                    <td>$estoq</td>
-                                    <td>$uni</td>
-                                    <td>$fornecedor</td>
-                                    <td>$fab</td>
-                                    <td>$preco</td>
-                                    <td>$lote</td>
-                                    <td>$desctec</td>
-                                    <td>$obs</td>
                                     <td>
                                         <input type = 'hidden' name = 'id_produto' value = '$id'/>
                                         <button type = 'submit' class = 'btn waves-effect waves-light green'><i class='material-icons'>edit</i></button>
