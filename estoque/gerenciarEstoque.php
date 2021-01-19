@@ -31,55 +31,46 @@
                 </div>
         </div>
     </div>
+    <div class='row'>
+        <table class="highlight">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Fórmula</th>
+                    <th>Estoque Mínimo</th>
+                    <th>Unidade Média</th>
+                    <th>Fornecedor</th>
+                    <th>Fabricante</th>
+                    <th>Preço</th>
+                    <th>Lote</th>
+                    <th>Descrição Tecnológica</th>
+                    <th>Obs</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
 
-    <?php
-        require_once '../banco/conexao.php';
-        $query = "SELECT * FROM produtos ORDER BY nome ASC";
-        $execut = mysqli_query($conexao,$query);
+            <?php
+                require_once '../banco/conexao.php';
+                $query = "SELECT * FROM produtos ORDER BY nome ASC";
+                $execut = mysqli_query($conexao,$query);
 
-        echo "  
-            <div class='row'>
-                  
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Nome</th>
-                                <th>Descrição</th>
-                                <th>Fórmula</th>
-                                <th>Estoque Mínimo</th>
-                                <th>Unidade Média</th>
-                                <th>Fornecedor</th>
-                                <th>Fabricante</th>
-                                <th>Preço</th>
-                                <th>Lote</th>
-                                <th>Descrição Tecnológica</th>
-                                <th>Obs</th>
-                                <th>Editar</th>
-                                <th>Excluir</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-            </div>
-        ";
+                while($dados = mysqli_fetch_array($execut)){
+                    $id = $dados['id_produto'];
+                    $nome = $dados['nome'];
+                    $desc = $dados['descricaoProd'];
+                    $form = $dados['formula'];
+                    $estoq = $dados['estoqueMin'];
+                    $uni = $dados ['unidadeMed'];
+                    $fornecedor = $dados['fornecedor'];
+                    $fab = $dados['Fabricante'];
+                    $preco = $dados['precoMed'];
+                    $lote = $dados['lote'];
+                    $desctec = $dados['descricaoTec'];
+                    $obs = $dados['obs'];
 
-        while($dados = mysqli_fetch_array($execut)){
-            $id = $dados['id_produto'];
-            $nome = $dados['nome'];
-            $desc = $dados['descricaoProd'];
-            $form = $dados['formula'];
-            $estoq = $dados['estoqueMin'];
-            $uni = $dados ['unidadeMed'];
-            $fornecedor = $dados['fornecedor'];
-            $fab = $dados['Fabricante'];
-            $preco = $dados['precoMed'];
-            $lote = $dados['lote'];
-            $desctec = $dados['descricaoTec'];
-            $obs = $dados['obs'];
-
-            echo " 
-                <div class='row'>
-                    <table class = 'striped'>
+                    echo " 
                         <tbody id = 'myTable'>
                             <tr>
                                 <form action = 'editarProduto.php' method='POST'>
@@ -103,27 +94,27 @@
                                     <div>
                                         <a class='waves-effect waves-light btn modal-trigger' href='#modal1'><i class='material-icons'>delete</i></a>
                                     </div>
-                                <div id='modal1' class='modal'>
-                                    <div class='modal-content'>
-                                        <h4>ATENÇÃO</h4>
+                                    <div id='modal1' class='modal'>
+                                        <div class='modal-content'>
+                                            <h4>ATENÇÃO</h4>
                                             <p>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse produto</p>
+                                        </div>
+                                        <div class='modal-footer'>
+                                            <form action = 'excluirProduto.php' method = 'POST'/>
+                                                <input type = 'hidden' name = 'id_produto' value = '$id'/>
+                                                <button typé = 'submit' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</button>
+                                                <a href='gerenciarEstoque.php' class='modal-close waves-effect waves-red btn-flat'>Cancelar</a>
+                                            </form>
+                                        </div>
                                     </div>
-                                    <div class='modal-footer'>
-                                    <form action = 'excluirProduto.php' method = 'POST'/>
-                                        <input type = 'hidden' name = 'id_produto' value = '$id'/>
-                                        <button typé = 'submit' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</button>
-                                        <a href='gerenciarEstoque.php' class='modal-close waves-effect waves-red btn-flat'>Cancelar</a>
-                                    </form>
-                                    </div>
-                                </div>
-                            </td>
+                                </td>
                             </tr>
                         </tbody>
-                    </table>
-                </div>
-            ";
-        }
-    ?>
+                    ";
+                }
+            ?>
+        </table>
+    </div>
 
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
