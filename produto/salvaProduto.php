@@ -36,14 +36,14 @@
             echo"
                     <script>
                         alert('Produto cadastrado com sucesso!!!');
-                        location.href='cadastrarProduto.php';
+                        location.href='cadastrarProd.php';
                     </script>
                 ";
         }else{
             echo"
                     <script>
                         alert('Erro ao cadastrar novo produto!!!');
-                        location.href='cadastrarProduto.php';
+                        location.href='cadastrarProd.php';
                     </script>
                 ";
         }

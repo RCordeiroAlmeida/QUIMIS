@@ -59,8 +59,8 @@
                 <textarea id="obs" name = "obs" class="materialize-textarea"></textarea>
             </div>
             <div class="input-field col s12">
-                <button type="submit" class="btn blue">Cadastrar</button>
-                <a href="../index.php" button type="submit" class="btn green">Voltar ao menu</a>
+                <button type="submit" class="btn blue"><i class="material-icons left">send</i>Cadastrar</button>
+                <a href="../index.php" button type="submit" class="btn green"><i class="material-icons left">arrow_back</i>Voltar ao menu</a>
             </div>
         </form>
     </div>

@@ -94,7 +94,7 @@
 
                             </form>
 
-                            <a href='clientes.php' class=' btn waves-effect waves light red'><i class='material-icons left'>arrow_back</i>Voltar</a>
+                            <a href='gerenciarEstoque.php' class=' btn waves-effect waves light red'><i class='material-icons left'>arrow_back</i>Voltar</a>
                         </div>
                     </div>
                     ";
