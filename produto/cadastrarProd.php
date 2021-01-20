@@ -55,7 +55,7 @@
                 <textarea id="descricaoTec" name = 'descricaoTec' class="materialize-textarea"></textarea>
             </div>
             <div class="input-field col s12">
-                <label for="obs">Observação</label>
+                <label for="obs">Observações</label>
                 <textarea id="obs" name = "obs" class="materialize-textarea"></textarea>
             </div>
             <div class="input-field col s12">
