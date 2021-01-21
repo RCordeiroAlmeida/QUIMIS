@@ -36,9 +36,9 @@
         <table class="highlight centered responsive-table">
             <thead>
                 <tr>
-                    <th>Código</th>
-                    <th>Nome</th>
                     <th>Visualizar</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
                     <th>Editar</th>
                     <th>Excluir</th>
                 </tr>
@@ -57,15 +57,15 @@
                     echo " 
                         <tbody id = 'myTable'>
                             <tr>
+                                <td>
+                                    <form action='visualizarProd.php' method='POST'>
+                                        <input type = 'hidden' name = 'id_produto' value = '$id'/>
+                                        <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
+                                    </form>
+                                </td>
                                 <form action = '../produto/editarProduto.php' method='POST'>
-                                    <td>$id</td>
                                     <td>$nome</td>
-                                    <td>
-                                        <form action='visualizarProd.php' method='POST'>
-                                            <input type = 'hidden' name = 'id_produto' value = '$id'/>
-                                            <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
-                                        </form>
-                                    </td>
+                                    <td>$desc</td>
                                     <td>
                                         <input type = 'hidden' name = 'id_produto' value = '$id'/>
                                         <button type = 'submit' class = 'btn waves-effect waves-light green'><i class='material-icons'>edit</i></button>
