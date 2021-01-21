@@ -27,7 +27,7 @@
                 <textarea id="formula" name= 'formula' class="materialize-textarea"></textarea>
             </div>
             <div class="input-field col s12">
-                <label for="estoqueMin">Estoque mínimo</label>
+                <label for="estoqueMin">Quantidade em Estoque</label>
                 <input type="text" name="estoqueMin" id="estoqueMin">
             </div>
             <div class="input-field col s12">

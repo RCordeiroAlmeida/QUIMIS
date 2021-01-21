@@ -73,8 +73,8 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <form action = '../pedidos/novoPedido.php' method = 'POST'>
-                                        <input type = 'hidden' name = 'id_pedido' value = '$id'/>
+                                    <form action = '../pedidos/selectProduto.php' method = 'POST'>
+                                        <input type = 'hidden' name = 'id_clientep' value = '$id'/>
                                         <button type='submit' class='btn waves-effect waves-light green'><i class='material-icons'>assignment</i></button>
                                     </form>
                                 </td>

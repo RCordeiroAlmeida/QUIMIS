@@ -56,7 +56,7 @@
                                     <textarea id='formula' name= 'formula' class='materialize-textarea'>$form</textarea>
                                 </div>
                                 <div class='input-field col s12'>
-                                    <label for='estoqueMin'>Estoque mínimo</label>
+                                    <label for='estoqueMin'>Quantidade em Estoque</label>
                                     <input type='text' name='estoqueMin' id='estoqueMin' value='$estoq'/>
                                 </div>
                                 <div class='input-field col s12'>

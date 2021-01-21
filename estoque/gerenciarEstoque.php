@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="../css/gerenciaEstoq.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -33,12 +34,14 @@
         </div>
     </div>
     <div class='row'>
-        <table class="highlight centered responsive-table">
+        <table class="highlight stripped centered responsive-table">
             <thead>
                 <tr>
-                    <th>Visualizar</th>
+                    <th>Código</th>
                     <th>Nome</th>
-                    <th>Descrição</th>
+                    <th>Lote</th>
+                    <th>Estoque</th>
+                    <th>Visualizar</th>
                     <th>Editar</th>
                     <th>Excluir</th>
                 </tr>
@@ -52,20 +55,23 @@
                 while($dados = mysqli_fetch_array($execut)){
                     $id = $dados['id_produto'];
                     $nome = $dados['nome'];
-                    $desc = $dados['descricaoProd'];
+                    $estoq = $dados['estoqueMin'];
+                    $lote = $dados['lote'];
 
                     echo " 
                         <tbody id = 'myTable'>
                             <tr>
-                                <td>
-                                    <form action='visualizarProd.php' method='POST'>
-                                        <input type = 'hidden' name = 'id_produto' value = '$id'/>
-                                        <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
-                                    </form>
-                                </td>
                                 <form action = '../produto/editarProduto.php' method='POST'>
+                                    <td>$id</td>
                                     <td>$nome</td>
-                                    <td>$desc</td>
+                                    <td>$lote</td>
+                                    <td>$estoq</td>
+                                    <td>
+                                        <form action='visualizarProd.php' method='POST'>
+                                            <input type = 'hidden' name = 'id_produto' value = '$id'/>
+                                            <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
+                                        </form>
+                                    </td>
                                     <td>
                                         <input type = 'hidden' name = 'id_produto' value = '$id'/>
                                         <button type = 'submit' class = 'btn waves-effect waves-light green'><i class='material-icons'>edit</i></button>
