@@ -56,7 +56,6 @@
                     <input type='button' value='IMPRIMIR' onClick='window.print()' class='botao'/>
                 </form>
                 
-
             ";
          }
     ?>
