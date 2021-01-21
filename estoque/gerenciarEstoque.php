@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="../css/gerenciaEstoq.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
@@ -34,13 +33,11 @@
         </div>
     </div>
     <div class='row'>
-        <table class="highlight stripped centered responsive-table">
+        <table class="highlight centered responsive-table">
             <thead>
                 <tr>
                     <th>Código</th>
                     <th>Nome</th>
-                    <th>Lote</th>
-                    <th>Estoque</th>
                     <th>Visualizar</th>
                     <th>Editar</th>
                     <th>Excluir</th>
@@ -55,8 +52,7 @@
                 while($dados = mysqli_fetch_array($execut)){
                     $id = $dados['id_produto'];
                     $nome = $dados['nome'];
-                    $estoq = $dados['estoqueMin'];
-                    $lote = $dados['lote'];
+                    $desc = $dados['descricaoProd'];
 
                     echo " 
                         <tbody id = 'myTable'>
@@ -64,8 +60,6 @@
                                 <form action = '../produto/editarProduto.php' method='POST'>
                                     <td>$id</td>
                                     <td>$nome</td>
-                                    <td>$lote</td>
-                                    <td>$estoq</td>
                                     <td>
                                         <form action='visualizarProd.php' method='POST'>
                                             <input type = 'hidden' name = 'id_produto' value = '$id'/>
