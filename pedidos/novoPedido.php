@@ -59,6 +59,7 @@
                         <textarea></textarea>
                     </fieldset>
                     <input type='button' value='IMPRIMIR' onClick='window.print()' class='botao'/>
+                    <a href='../cliente/clientes.php' button type='submit'>Voltar ao Menu</a>
                 </form>
                 
             ";
