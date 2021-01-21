@@ -26,6 +26,10 @@
                 <label for="ie">Inscrição Estadual</label>
                 <input type="text" name="ie" id="ie" maxlength="17">
             </div> 
+            <div class="input-field col s12">
+                <label for="cliente">Cliente</label>
+                <input type="text" name="client"id="client">
+            </div>
             <div class="input-field col s12">   
                 <label for="telefone">Telefone</label>
                 <input type="text" name="telefone" id="telefone"  maxlength="14">

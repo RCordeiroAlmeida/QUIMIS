@@ -29,6 +29,7 @@
                 $nome = $rows_busca['nome'];
                 $cnpj = $rows_busca['cnpj'];
                 $ie = $rows_busca['ie'];
+                $client = $_POST['client'];
                 $tel = $rows_busca['telefone'];
                 $cel = $rows_busca['celular'];
                 $email = $rows_busca['email'];
@@ -56,6 +57,10 @@
                             <div class='input-field col s12'>
                                 <label for='ie'>Inscrição Estadual</label>
                                 <input type='text' name='ie' id='ie' maxlength='17' value = '$ie' disabled='disabled'>
+                            </div>
+                            <div class='input-field col s12'>
+                                <label for='client'>Cliente</label>
+                                <input type='text' name='client' id='client' value = '$client' disabled='disabled'>
                             </div>
                             <div class='input-field col s12'>
                                 <label for='telefone'>Telefone</label>

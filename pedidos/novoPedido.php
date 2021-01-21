@@ -22,6 +22,7 @@
             $nome = $dados['nome'];
             $cnpj = $dados['cnpj'];
             $ie = $dados['ie'];
+            $client = $dados['client'];
             $tel = $dados['telefone'];
             $cel = $dados['celular'];
             $email = $dados['email'];
@@ -36,11 +37,15 @@
             echo"
                 <form action='' method='POST'>
                     <fieldset>
+                        <legend>QUIMINIL</legend>
+                    </fieldset>
+                    <fieldset>
                         <legend>DADOS DO CLIENTE</legend>
                         <p class='alinhar'>PEDIDO N°: $id</p>
                         <p class='alinhar'>DATA DO PEDIDO: <input id='date' type='date' value='dd/mm/yyyy'/>
                         DATA DA ENTREGA: <input id='date' type='date' value='dd/mm/yyyy'/></p>
-                        <p>NOME: $nome</p>
+                        <p>EMPRESA: $nome</p>
+                        <p>CLIENTE: $client</p>
                         <p>CEP: $cep</p>
                         <p>ENDEREÇO: $log, N°$num - $bairro - $cidade/$uf</p> 
                         <p>COMPLEMENTO: $comp</p>
