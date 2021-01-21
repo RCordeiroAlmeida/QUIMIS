@@ -4,8 +4,7 @@
     
     $empresa = $_POST['nome']; 
     $cnpj = $_POST['cnpj']; 
-    $ie = $_POST['ie'];
-    $client = $_POST['client'];
+    $ie = $_POST['ie']; 
     $tel = $_POST['telefone'];
     $cel = $_POST['celular']; 
     $email = $_POST['email'];
