@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
             $("#busca").on("keyup", function() {
@@ -32,84 +33,74 @@
         </div>
     </div>
     <div class='row'>
-            <table class="highlight centered responsive-table">
-                <thead>
-                    <tr>
-                        <th>Visualizar</th>
-                        <th>Nome</th>
-                        <th>Descrição</th>
-                        <th>Editar</th>
-                        <th>Excluir</th>
-                    </tr>
-                </thead>
+        <table class="highlight centered responsive-table">
+            <thead>
+                <tr>
+                    <th>Visualizar</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Editar</th>
+                    <th>Excluir</th>
+                </tr>
+            </thead>
 
-                <?php
-                    require_once '../banco/conexao.php';
-                    $query = "SELECT * FROM produtos ORDER BY nome ASC";
-                    $execut = mysqli_query($conexao,$query);
+            <?php
+                require_once '../banco/conexao.php';
+                $query = "SELECT * FROM produtos ORDER BY nome ASC";
+                $execut = mysqli_query($conexao,$query);
 
-                    while($dados = mysqli_fetch_array($execut)){
-                        $id = $dados['id_produto'];
-                        $nome = $dados['nome'];
-                        $desc = $dados['descricaoProd'];
-                        $form = $dados['formula'];
-                        $estoq = $dados['estoqueMin'];
-                        $uni = $dados ['unidadeMed'];
-                        $fornecedor = $dados['fornecedor'];
-                        $fab = $dados['Fabricante'];
-                        $preco = $dados['precoMed'];
-                        $lote = $dados['lote'];
-                        $desctec = $dados['descricaoTec'];
-                        $obs = $dados['obs'];
+                while($dados = mysqli_fetch_array($execut)){
+                    $id = $dados['id_produto'];
+                    $nome = $dados['nome'];
+                    $desc = $dados['descricaoProd'];
 
-                        echo " 
-                            <tbody id = 'myTable'>
-                                <tr>
-                                    <td>
-                                        <form action='visualizarProd.php' method='POST'>
-                                            <input type = 'hidden' name = 'id_produto' value = '$id'/>
-                                            <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
-                                        </form>
-                                    </td>
-                                    <form action = '../produto/editarProduto.php' method='POST'>
-                                        <td>$nome</td>
-                                        <td>$desc</td>
-                                        <td>
-                                            <input type = 'hidden' name = 'id_produto' value = '$id'/>
-                                            <button type = 'submit' class = 'btn waves-effect waves-light green'><i class='material-icons'>edit</i></button>
-                                        </td>
+                    echo " 
+                        <tbody id = 'myTable'>
+                            <tr>
+                                <td>
+                                    <form action='visualizarProd.php' method='POST'>
+                                        <input type = 'hidden' name = 'id_produto' value = '$id'/>
+                                        <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
                                     </form>
+                                </td>
+                                <form action = '../produto/editarProduto.php' method='POST'>
+                                    <td>$nome</td>
+                                    <td>$desc</td>
                                     <td>
-                                        <div>
-                                            <a class='waves-effect waves-light red btn modal-trigger' href='#modal1'><i class='material-icons'>delete</i></a>
-                                        </div>
-                                        <div id='modal1' class='modal'>
-                                            <div class='modal-content'>
-                                                <h3>ATENÇÃO</h3>
-                                                <h5>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse produto</h5>
-                                            </div>
-                                            <div class='modal-footer'>
-                                                <form action = '../produto/excluirProduto.php' method = 'POST'/>
-                                                    <input type = 'hidden' name = 'id_produto' value = '$id'/>
-                                                    <button type = 'submit' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</button>
-                                                    <a href='gerenciarEstoque.php' class='modal-close waves-effect waves-red btn-flat'>Cancelar</a>
-                                                </form>
-                                            </div>
-                                        </div>
+                                        <input type = 'hidden' name = 'id_produto' value = '$id'/>
+                                        <button type = 'submit' class = 'btn waves-effect waves-light green'><i class='material-icons'>edit</i></button>
                                     </td>
-                                </tr>
-                            </tbody>
-                        ";
-                    }
-                ?>
-            </table>
-        </div>
+                                </form>
+                                <td>
+                                    <div>
+                                        <a class='waves-effect waves-light red btn modal-trigger' href='#modal1'><i class='material-icons'>delete</i></a>
+                                    </div>
+                                    <div id='modal1' class='modal'>
+                                        <div class='modal-content'>
+                                            <h3>ATENÇÃO</h3>
+                                            <h5>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse produto</h5>
+                                        </div>
+                                        <div class='modal-footer'>
+                                            <form action = '../produto/excluirProduto.php' method = 'POST'/>
+                                                <input type = 'hidden' name = 'id_produto' value = '$id'/>
+                                                <button type = 'submit' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</button>
+                                                <a href='gerenciarEstoque.php' class='modal-close waves-effect waves-red btn-flat'>Cancelar</a>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    ";
+                }
+            ?>
+        </table>
+    </div>
 
     <!--JavaScript at end of body for optimized loading-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script>
-        M.AutoInit();
-    </script>
+    <scrip src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></scrip>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>M.AutoInit();</script>
 </body>
-
 </html>
