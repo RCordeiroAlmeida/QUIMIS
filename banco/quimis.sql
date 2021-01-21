@@ -76,7 +76,7 @@ CREATE TABLE `produtos` (
   `nome` varchar(255) NOT NULL,
   `descricaoProd` varchar(255) NOT NULL,
   `formula` varchar(255) NOT NULL,
-  `estoqueMin` varchar(255) NOT NULL,
+  `qtddEstoque` varchar(255) NOT NULL,
   `unidadeMed` varchar(255) NOT NULL,
   `fornecedor` varchar(255) NOT NULL,
   `Fabricante` varchar(255) NOT NULL,
