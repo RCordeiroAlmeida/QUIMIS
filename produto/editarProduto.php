@@ -89,7 +89,7 @@
                                 </div>
                                 <div class='input-field col s12'>
                                     <input type = 'hidden' name = 'id_produto' value = '$id'/>
-                                    <button type='submit' class='btn waves-effect waves-light'><i class='material-icons left'>edit</i>Salvar alterações</button>
+                                    <button type='submit' class='btn waves-effect waves-light green'><i class='material-icons left'>edit</i>Salvar alterações</button>
                                     <a href='../estoque/gerenciarEstoque.php' class=' btn waves-effect waves light red'><i class='material-icons left'>arrow_back</i>Voltar</a>
                                 </div>
                             </form>
