@@ -31,7 +31,7 @@
                 $nproduto = $dados['nome'];
                 $preço = $dados['precoMed'];
                 
-                echo "
+                echo " united
                     <tbody>
                         <tr>
                             <td>$nproduto</td>
