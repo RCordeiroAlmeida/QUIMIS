@@ -30,6 +30,7 @@
                 $nome = $rows_busca['nome'];
                 $cnpj = $rows_busca['cnpj'];
                 $ie = $rows_busca['ie'];
+                $client = $rows_busca['client'];
                 $tel = $rows_busca['telefone'];
                 $cel = $rows_busca['celular'];
                 $email = $rows_busca['email'];
