@@ -5,7 +5,6 @@
     $empresa = $_POST['nome']; 
     $cnpj = $_POST['cnpj']; 
     $ie = $_POST['ie'];
-    $client = $_POST['client'];
     $tel = $_POST['telefone'];
     $cel = $_POST['celular']; 
     $email = $_POST['email'];

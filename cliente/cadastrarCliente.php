@@ -7,6 +7,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!---->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <title>Novo Cadastro</title>
 </head>
 <body>
@@ -15,28 +19,24 @@
         <h3 class="light">Novo cliente</h3>
         <form action="salvaCliente.php" method="POST">
             <div class="input-field col s12">
-                <label for="nome">Nome</label>
+                <label for="nome">Cliente</label>
                 <input type="text" name="nome" id="nome" maxlength = "50" required>
             </div>
             <div class="input-field col s12">
                 <label for="cnpj">CNPJ</label>
-                <input type="text" name="cnpj" id="cnpj" maxlength = "18" required>
+                <input type="text" name="cnpj" id= "cnpj" class="form-control" onkeypress="$(this).mask('00.000.000/0000-00')" required>
             </div>
             <div class="input-field col s12">
                 <label for="ie">Inscrição Estadual</label>
                 <input type="text" name="ie" id="ie" maxlength="17">
             </div> 
-            <div class="input-field col s12">
-                <label for="cliente">Cliente</label>
-                <input type="text" name="client"id="client">
-            </div>
             <div class="input-field col s12">   
                 <label for="telefone">Telefone</label>
-                <input type="text" name="telefone" id="telefone"  maxlength="14">
+                <input type="text" name="telefone" id = "telefone" class="form-control" onkeypress="$(this).mask('(00) 0000-0000')">
             </div>
             <div class="input-field col s12">   
                 <label for="celular">Celular</label>
-                <input type="text" name="celular" id="celular"  maxlength="15">
+                <input type="text" name="celular" id="celular" class="form-control" onkeypress="$(this).mask('(00) 0000-00009')">
             </div>
             <div class="input-field col s12">   
                 <label for="email">E-mail</label>
@@ -114,8 +114,7 @@
             </script>
             <div class="input-field col s12"> 
                 <label for ="cep">CEP</label>
-                <input name="cep" type="text" id="cep" value = "" maxlength="9"
-                    onblur="pesquisacep(this.value);" required/>
+                <input name="cep" type="text" id="cep" value = "" maxlength="9" onblur="pesquisacep(this.value);" required/>
             </div>
             <div class="input-field col s12"> 
                 <input name="rua" type="text" id="rua" placeholder="Rua" readonly/>
@@ -175,6 +174,7 @@
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script> M.AutoInit();</script>
 </body>
 </html>

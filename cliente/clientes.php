@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/table.css">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -73,8 +74,8 @@
                                     </form>
                                 </td>
                                 <td>
-                                    <form action = '../pedidos/novoPedido.php' method = 'POST'>
-                                        <input type = 'hidden' name = 'id_pedido' value = '$id'/>
+                                    <form action = '../pedidos/novo.php' method = 'POST'>
+                                        <input type = 'hidden' name = 'id_cliente' value = '$id'/>
                                         <button type='submit' class='btn waves-effect waves-light green'><i class='material-icons'>assignment</i></button>
                                     </form>
                                 </td>

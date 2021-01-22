@@ -7,6 +7,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <title>Estoque - QUIMIS</title>
 </head>
 <body>
@@ -43,8 +46,8 @@
                 <input type="text" name="fabricante" id="fabricante">
             </div>
             <div class="input-field col s12">
-                <label for="precoMed">Preço médio</label>
-                <input type="text" name="precoMed" id="precoMed">
+                <label for="precoMed">Preco Médio</label>
+                <input type="text" name="precoMed" class="form-control" onkeypress="$(this).mask('R$ 999.990,00')">
             </div>
             <div class="input-field col s12">
                 <label for="lote">Lote</label>
@@ -67,5 +70,6 @@
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
 </body>
 </html>

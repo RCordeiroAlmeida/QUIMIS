@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/table.css">
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
@@ -36,9 +37,11 @@
         <table class="highlight centered responsive-table">
             <thead>
                 <tr>
+                    <th>Código</th>
+                    <th>Produto</th>
+                    <th>Lote</th>
+                    <th>Em estoque</th>
                     <th>Visualizar</th>
-                    <th>Nome</th>
-                    <th>Descrição</th>
                     <th>Editar</th>
                     <th>Excluir</th>
                 </tr>
@@ -52,11 +55,16 @@
                 while($dados = mysqli_fetch_array($execut)){
                     $id = $dados['id_produto'];
                     $nome = $dados['nome'];
-                    $desc = $dados['descricaoProd'];
+                    $lote = $dados['lote'];
+                    $estoq = $dados['estoqueMin'];
 
                     echo " 
                         <tbody id = 'myTable'>
                             <tr>
+                                <td>$id</td>
+                                <td>$nome</td>
+                                <td>$lote</td>
+                                <td>$estoq</td> 
                                 <td>
                                     <form action='visualizarProd.php' method='POST'>
                                         <input type = 'hidden' name = 'id_produto' value = '$id'/>
@@ -64,8 +72,6 @@
                                     </form>
                                 </td>
                                 <form action = '../produto/editarProduto.php' method='POST'>
-                                    <td>$nome</td>
-                                    <td>$desc</td>
                                     <td>
                                         <input type = 'hidden' name = 'id_produto' value = '$id'/>
                                         <button type = 'submit' class = 'btn waves-effect waves-light green'><i class='material-icons'>edit</i></button>

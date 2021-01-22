@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/pedido.css">
-    <title>Novo pedido</title>
+    <title>Detalhes do Pedido</title>
 </head>
 <body>
     <?php
@@ -22,7 +22,6 @@
             $nome = $dados['nome'];
             $cnpj = $dados['cnpj'];
             $ie = $dados['ie'];
-            $client = $dados['client'];
             $tel = $dados['telefone'];
             $cel = $dados['celular'];
             $email = $dados['email'];
@@ -45,7 +44,6 @@
                         <p class='alinhar'>DATA DO PEDIDO: <input id='date' type='date' value='dd/mm/yyyy'/>
                         DATA DA ENTREGA: <input id='date' type='date' value='dd/mm/yyyy'/></p>
                         <p>EMPRESA: $nome</p>
-                        <p>CLIENTE: $client</p>
                         <p>CEP: $cep</p>
                         <p>ENDEREÇO: $log, N°$num - $bairro - $cidade/$uf</p> 
                         <p>COMPLEMENTO: $comp</p>
@@ -55,8 +53,8 @@
                         <p class='alinhar'>INSCRIÇÃO ESTADUAL: $ie</p>
                     </fieldset>
                     <fieldset>
-                        <legend>DADOS DO PEDIDO</legend>
-                        <textarea></textarea>
+                        <legend>OBSERVAÇÕES DO PEDIDO</legend>
+                        <textarea class='txt' placeholder = 'Por ex: falar com fulano' autofocus cols='100'></textarea>
                     </fieldset>
                     <input type='button' value='IMPRIMIR' onClick='window.print()' class='botao'/>
                     <a href='../cliente/clientes.php' button type='submit'>Voltar ao Menu</a>

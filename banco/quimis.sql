@@ -33,7 +33,6 @@ CREATE TABLE `cliente` (
   `nome` varchar(50) NOT NULL,
   `cnpj` varchar(18) NOT NULL,
   `ie` varchar(17) NOT NULL,
-  `client` varchar(255) NOT NULL,
   `telefone` varchar(14) NOT NULL,
   `celular` varchar(15) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -50,15 +49,6 @@ CREATE TABLE `cliente` (
 -- Extraindo dados da tabela `cliente`
 --
 
-INSERT INTO `cliente` (`id_cliente`, `nome`, `cnpj`, `ie`, `client`, `telefone`, `celular`, `email`, `cep`, `logradouro`, `numero`, `complemento`, `bairro`, `cidade`, `UF`) VALUES
-(10, 'Rafael cordeiro', '2232251', '3366', '', '46402075', '', 'rafaelcordeiroalmeida299@gmail.com', '59074305', 'Travessa Indomar', 363, '', 'Felipe Camarão', 'Natal', 'RN'),
-(11, 'João Augusto', '09.090.909/0091090', '22333', '', '46402075', '', 'rafaelcordeiroalmeida299@gmail.com', '59074305', 'Travessa Indomar', 665, 'g5', 'Felipe Camarão', 'Natal', 'MA'),
-(12, 'Janaína', '88.888.888/8081888', '3363', '', '1222433662', '119535322642', 'janaina@gmail.com', '08571000', 'Avenida Presidente Tancredo Neves', 522, '', 'Estação', 'Itaquaquecetuba', 'SP'),
-(13, 'Marcelo', '66255311615213', '11511', '', '40028922', '11952793798', 'marcelo@gmail.com', '08571000', 'Avenida Presidente Tancredo Neves', 6698, '', 'Estação', 'Itaquaquecetuba', 'CE'),
-(14, 'Leonardo', '53.434.343/4031434', '11666', '', '34495267', '11982829179', 'leonardo@gmail.com', '08571000', 'Avenida Presidente Tancredo Neves', 885, '', 'Estação', 'Itaquaquecetuba', 'MA'),
-(15, 'Alberto', '777888115', '3352', '', '40028933', '982829177', 'albertosantos@gmail.com', '59074305', 'Travessa Indomar', 2336, 'b', 'Felipe Camarão', 'Natal', 'RN'),
-(16, 'Wagner', '2266632', '446814121', '', '46450798', '11946450755', 'wagner@gmail.com', '08571000', 'Avenida Presidente Tancredo Neves', 23, 'c', 'Estação', 'Itaquaquecetuba', 'SP'),
-(17, 'Brenda', '442111551', '886511142', '', '11468211146', '11552145226', 'brenda@gmail.com', '08571000', 'Avenida Presidente Tancredo Neves', 90, '', 'Estação', 'Itaquaquecetuba', 'PB');
 
 -- --------------------------------------------------------
 
