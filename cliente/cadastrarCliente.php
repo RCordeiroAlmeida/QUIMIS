@@ -36,7 +36,7 @@
             </div>
             <div class="input-field col s12">   
                 <label for="celular">Celular</label>
-                <input type="text" name="celular" id="celular" class="form-control" onkeypress="$(this).mask('(00) 0000-00009')">
+                <input type="text" name="celular" id="celular" class="form-control" onkeypress="$(this).mask('(00) 0 0000-0000')">
             </div>
             <div class="input-field col s12">   
                 <label for="email">E-mail</label>
@@ -114,7 +114,7 @@
             </script>
             <div class="input-field col s12"> 
                 <label for ="cep">CEP</label>
-                <input name="cep" type="text" id="cep" value = "" maxlength="9" onblur="pesquisacep(this.value);" required/>
+                <input name="cep" type="text" id="cep" value = "" maxlength="9" onblur="pesquisacep(this.value).mask('00000-000');" required/>
             </div>
             <div class="input-field col s12"> 
                 <input name="rua" type="text" id="rua" placeholder="Rua" readonly/>

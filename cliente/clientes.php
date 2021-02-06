@@ -86,7 +86,7 @@
                                     <div id='modal1' class='modal'>
                                         <div class='modal-content'>
                                             <h3>ATENÇÃO</h3>
-                                            <h5>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse cliente</h5>
+                                            <h6>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse cliente</h6>
                                         </div>
                                         <div class='modal-footer'>
                                             <form action = 'excluirCliente.php' method = 'POST'/>
