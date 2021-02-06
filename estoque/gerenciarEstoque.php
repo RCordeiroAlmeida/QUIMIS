@@ -39,7 +39,7 @@
                 <tr>
                     <th>Código</th>
                     <th>Produto</th>
-                    <th>Lote</th>
+                    <th>Valor Unitário</th>
                     <th>Em estoque</th>
                     <th>Visualizar</th>
                     <th>Editar</th>
@@ -55,15 +55,15 @@
                 while($dados = mysqli_fetch_array($execut)){
                     $id = $dados['id_produto'];
                     $nome = $dados['nome'];
-                    $lote = $dados['lote'];
+                    $preço = $dados['precoMed'];
                     $estoq = $dados['estoqueMin'];
 
                     echo " 
-                        <tbody id = 'myTable'>
+                        <tbody>
                             <tr>
                                 <td>$id</td>
                                 <td>$nome</td>
-                                <td>$lote</td>
+                                <td>$preço</td>
                                 <td>$estoq</td> 
                                 <td>
                                     <form action='visualizarProd.php' method='POST'>
@@ -71,32 +71,32 @@
                                         <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
                                     </form>
                                 </td>
-                                <form action = '../produto/editarProduto.php' method='POST'>
-                                    <td>
+                                <td>
+                                    <form action = '../produto/editarProduto.php' method='POST'>
                                         <input type = 'hidden' name = 'id_produto' value = '$id'/>
                                         <button type = 'submit' class = 'btn waves-effect waves-light green'><i class='material-icons'>edit</i></button>
-                                    </td>
-                                </form>
+                                    </form>        
+                                </td>
                                 <td>
                                     <div>
-                                        <a class='waves-effect waves-light red btn modal-trigger' href='#modal1'><i class='material-icons'>delete</i></a>
+                                        <a class='waves-effect waves-light btn modal-trigger red' href='#modal1'><i class='material-icons'>delete</i></a>
                                     </div>
                                     <div id='modal1' class='modal'>
                                         <div class='modal-content'>
                                             <h3>ATENÇÃO</h3>
-                                            <h6>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse produto</h6>
+                                            <h6>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse cliente</h6>
                                         </div>
                                         <div class='modal-footer'>
-                                            <form action = '../produto/excluirProduto.php' method = 'POST'/>
-                                                <input type = 'hidden' name = 'id_produto' value = '$id'/>
+                                            <form action = 'excluirProduto.php' method = 'POST'/>
+                                                <input type = 'hidden' name = 'id_cliente' value = '$id'/>
                                                 <button type = 'submit' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</button>
-                                                <a href='gerenciarEstoque.php' class='modal-close waves-effect waves-red btn-flat'>Cancelar</a>
+                                                <a href='clientes.php' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
                                             </form>
                                         </div>
                                     </div>
                                 </td>
                             </tr>
-                        </tbody>
+                        </tbody> 
                     ";
                 }
             ?>

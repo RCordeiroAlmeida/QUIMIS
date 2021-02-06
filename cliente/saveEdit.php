@@ -46,13 +46,13 @@
             if($update==1){
                 echo "<script>
                     alert('Alterações salvas com sucesso!');
-                    location.href='cliente/clientes.php';
+                    location.href='clientes.php';
                 </script>
-                ";
+                ";exit;
             }else{
                 echo "<script>
                     alert('Ocorreu um erro...');
-                    location.href='cliente/clientes.php';
+                    location.href='clientes.php';
                 </script>
                 ";
             }

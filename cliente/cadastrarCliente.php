@@ -36,7 +36,7 @@
             </div>
             <div class="input-field col s12">   
                 <label for="celular">Celular</label>
-                <input type="text" name="celular" id="celular" class="form-control" onkeypress="$(this).mask('(00) 0 0000-0000')">
+                <input type="text" name="celular" id="celular" class="form-control" onkeypress="$(this).mask('(00) 00000-0000')">
             </div>
             <div class="input-field col s12">   
                 <label for="email">E-mail</label>
