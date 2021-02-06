@@ -81,7 +81,7 @@
                                     <div>
                                         <button data-target='modal1' class='btn modal-trigger waves-effect waves-light red'><i class='material-icons'>delete</i></button>
                                     </div>
-                                    <div id='modal2' class='modal'>
+                                    <div id='modal1' class='modal'>
                                         <div class='modal-content'>
                                             <h3>ATENÇÃO</h3>
                                             <h6>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse cliente</h6>
@@ -103,8 +103,8 @@
         </table>
     </div>
 
-    <!--JavaScript at end of body for optimized loading-->
-    <scrip src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></scrip>
+    <!--JavaScript at end of body for optimized loading-->  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>M.AutoInit();</script>
