@@ -81,7 +81,7 @@
                                 </td>
                                 <td>
                                     <div>
-                                        <a class='waves-effect waves-light btn modal-trigger red' href='#modal1'><i class='material-icons'>delete</i></a>
+                                        <button data-target='modal1' class='btn modal-trigger waves-effect waves-light red'><i class='material-icons'>delete</i></button>
                                     </div>
                                     <div id='modal1' class='modal'>
                                         <div class='modal-content'>
@@ -96,8 +96,7 @@
                                             </form>
                                         </div>
                                     </div>
-                                    </td>
-                                </form
+                                </td>
                             </tr>
                         </tbody>       
                     ";

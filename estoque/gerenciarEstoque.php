@@ -79,9 +79,9 @@
                                 </td>
                                 <td>
                                     <div>
-                                        <a class='waves-effect waves-light btn modal-trigger red' href='#modal1'><i class='material-icons'>delete</i></a>
+                                        <button data-target='modal1' class='btn modal-trigger waves-effect waves-light red'><i class='material-icons'>delete</i></button>
                                     </div>
-                                    <div id='modal1' class='modal'>
+                                    <div id='modal2' class='modal'>
                                         <div class='modal-content'>
                                             <h3>ATENÇÃO</h3>
                                             <h6>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse cliente</h6>
