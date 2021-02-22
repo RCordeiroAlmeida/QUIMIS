@@ -76,6 +76,7 @@
                                 <td>
                                     <form action = '../pedidos/novo.php' method = 'POST'>
                                         <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                        <input type = 'hidden' name = 'nome' value = '$nome'/>
                                         <button type='submit' class='btn waves-effect waves-light green'><i class='material-icons'>assignment</i></button>
                                     </form>
                                 </td>

@@ -59,7 +59,7 @@
                     $estoq = $dados['estoqueMin'];
 
                     echo " 
-                        <tbody>
+                        <tbody id = 'myTable'>
                             <tr>
                                 <td>$id</td>
                                 <td>$nome</td>
@@ -87,8 +87,8 @@
                                             <h6>Clicando no botão abaixo, você concorda em excluir permanentemente os dados desse cliente</h6>
                                         </div>
                                         <div class='modal-footer'>
-                                            <form action = 'excluirProduto.php' method = 'POST'/>
-                                                <input type = 'hidden' name = 'id_cliente' value = '$id'/>
+                                            <form action = '../produto/excluirProduto.php' method = 'POST'/>
+                                                <input type = 'hidden' name = 'id_produto' value = '$id'/>
                                                 <button type = 'submit' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</button>
                                                 <a href='clientes.php' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
                                             </form>

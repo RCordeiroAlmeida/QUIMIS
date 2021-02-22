@@ -63,7 +63,7 @@
             </div>
             <div class="input-field col s12">
                 <button type="submit" class="btn blue"><i class="material-icons left">send</i>Cadastrar</button>
-                <a href="../index.php" button type="submit" class="btn green"><i class="material-icons left">arrow_back</i>Voltar ao menu</a>
+                <a href="../estoque/gerenciarEstoque.php" button type="submit" class="btn green"><i class="material-icons left">arrow_back</i>Voltar</a>
             </div>
         </form>
     </div>
