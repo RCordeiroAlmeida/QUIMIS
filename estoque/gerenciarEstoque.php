@@ -34,7 +34,7 @@
         </div>
     </div>
     <div class='row'>
-        <table class="highlight centered responsive-table">
+        <table class="highlight centered">
             <thead>
                 <tr>
                     <th>Código</th>
@@ -90,7 +90,7 @@
                                             <form action = '../produto/excluirProduto.php' method = 'POST'/>
                                                 <input type = 'hidden' name = 'id_produto' value = '$id'/>
                                                 <button type = 'submit' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</button>
-                                                <a href='clientes.php' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
+                                                <a href='../estoque/GerenciarEstoque.php' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
                                             </form>
                                         </div>
                                     </div>
