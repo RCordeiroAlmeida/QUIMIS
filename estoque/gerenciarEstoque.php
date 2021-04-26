@@ -90,7 +90,7 @@
                                             <form action = '../produto/excluirProduto.php' method = 'POST'/>
                                                 <input type = 'hidden' name = 'id_produto' value = '$id'/>
                                                 <button type = 'submit' class='modal-close waves-effect waves-green btn-flat'>Concordar e continuar</button>
-                                                <a href='../estoque/GerenciarEstoque.php' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
+                                                <a href='' class='modal-close waves-effect waves-green btn-flat'>Cancelar</a>
                                             </form>
                                         </div>
                                     </div>

@@ -16,42 +16,43 @@
 <div class="row">
     <div class="col s12 m6 push-m3 ">
         <h3 class="light">Novo produto</h3>
+        <h6>Todos os campos marcados com <span style="color: red;">*</span> são obrigatórios.</h6>
         <form action="salvaProduto.php" method="POST">
             <div class="input-field col s12">
-                <label for="nome">Nome</label>
-                <input type="text" name="nome" id="nome">
+                <label for="nome">Nome <span style="color: red;">*</span></label>
+                <input type="text" name="nome" id="nome" maxlength="100" required>
             </div>
             <div class="input-field col s12">
-                <label for="descricaoProd">Descrição do produto</label>
-                <textarea id="descricaoProd" name = "descricaoProd" class="materialize-textarea"></textarea>
+                <label for="descricaoProd">Descrição do produto <span style="color: red;">*</span></label>
+                <textarea id="descricaoProd" name = "descricaoProd" class="materialize-textarea" maxlength="255" required></textarea>
             </div>
             <div class="input-field col s12">
-                <label for="formula">Fórmula</label>
-                <textarea id="formula" name= 'formula' class="materialize-textarea"></textarea>
+                <label for="formula">Fórmula <span style="color: red;">*</span></label>
+                <input type="text" id="formula" name= 'formula' maxlength = "50" required>
             </div>
             <div class="input-field col s12">
-                <label for="estoqueMin">Estoque mínimo</label>
-                <input type="text" name="estoqueMin" id="estoqueMin">
+                <label for="estoqueMin">Estoque mínimo <span style="color: red;">*</span></label>
+                <input type="number" name="estoqueMin" id="estoqueMin" maxlength="5">
             </div>
             <div class="input-field col s12">
                 <label for="unidadeMed">Unidade media</label>
-                <input type="text" name="unidadeMed" id="unidadeMed">
+                <input type="number" name="unidadeMed" id="unidadeMed" maxlength="5">
             </div>
             <div class="input-field col s12">
-                <label for="fornecedor">Fornecedor</label>
-                <input type="text" name="fornecedor" id="fornecedor">
+                <label for="fornecedor">Fornecedor <span style="color: red;">*</span></label>
+                <input type="text" name="fornecedor" id="fornecedor" maxlength = "50" required>
             </div>
             <div class="input-field col s12">
-                <label for="fabricante">Fabricante</label>
-                <input type="text" name="fabricante" id="fabricante">
+                <label for="fabricante">Fabricante <span style="color: red;">*</span></label>
+                <input type="text" name="fabricante" id="fabricante" maxlength="50" required>
             </div>
             <div class="input-field col s12">
-                <label for="precoMed">Preco Médio</label>
-                <input type="text" name="precoMed" class="form-control" onkeypress="$(this).mask('R$ 999.990,00')">
+                <label for="precoMed">Preço <span style="color: red;">*</span></label>
+                <input type="text" name="precoMed" class="form-control" onkeypress="$(this).mask('R$ 999.990,00')" required/>
             </div>
             <div class="input-field col s12">
-                <label for="lote">Lote</label>
-                <input type="text" name="lote" id="lote">
+                <label for="lote">Lote <span style="color: red;">*</span></label>
+                <input type="number" name="lote" id="lote" maxlength="10" required>
             </div>
             <div class="input-field col s12">
                 <label for="descricaoTec">Descrição técnica</label>
@@ -62,7 +63,7 @@
                 <textarea id="obs" name = "obs" class="materialize-textarea"></textarea>
             </div>
             <div class="input-field col s12">
-                <button type="submit" class="btn blue"><i class="material-icons left">send</i>Cadastrar</button>
+                <button type="submit" name="submit" class="btn blue"><i class="material-icons left">send</i>Cadastrar</button>
                 <a href="../estoque/gerenciarEstoque.php" button type="submit" class="btn green"><i class="material-icons left">arrow_back</i>Voltar</a>
             </div>
         </form>
