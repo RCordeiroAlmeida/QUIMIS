@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: 21-Jan-2021 às 17:43
--- Versão do servidor: 5.7.25
--- versão do PHP: 7.1.26
+-- Tempo de geração: 26-Abr-2021 às 20:51
+-- Versão do servidor: 10.4.18-MariaDB
+-- versão do PHP: 7.3.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `quimis`
+-- Banco de dados: `quimis`
 --
 
 -- --------------------------------------------------------
@@ -32,16 +31,16 @@ CREATE TABLE `cliente` (
   `id_cliente` int(11) NOT NULL,
   `nome` varchar(50) NOT NULL,
   `cnpj` varchar(18) NOT NULL,
-  `ie` varchar(17) NOT NULL,
-  `telefone` varchar(14) NOT NULL,
+  `ie` varchar(17) DEFAULT NULL,
+  `telefone` varchar(14) DEFAULT NULL,
   `celular` varchar(15) NOT NULL,
   `email` varchar(255) NOT NULL,
   `cep` varchar(9) NOT NULL,
-  `logradouro` varchar(255) NOT NULL,
+  `logradouro` varchar(150) NOT NULL,
   `numero` int(10) NOT NULL,
-  `complemento` varchar(255) NOT NULL,
-  `bairro` varchar(255) NOT NULL,
-  `cidade` varchar(255) NOT NULL,
+  `complemento` varchar(50) DEFAULT NULL,
+  `bairro` varchar(100) NOT NULL,
+  `cidade` varchar(100) NOT NULL,
   `UF` char(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -49,6 +48,8 @@ CREATE TABLE `cliente` (
 -- Extraindo dados da tabela `cliente`
 --
 
+INSERT INTO `cliente` (`id_cliente`, `nome`, `cnpj`, `ie`, `telefone`, `celular`, `email`, `cep`, `logradouro`, `numero`, `complemento`, `bairro`, `cidade`, `UF`) VALUES
+(2, 'Marcelo', '11.111.111/1111-11', '', '', '(11) 98752-4117', 'marcelo@gmail.com', '08593020', 'Rua dos Bem-Te-Vis', 51, '', 'Chácara Holiday', 'Itaquaquecetuba', 'SP');
 
 -- --------------------------------------------------------
 
@@ -58,9 +59,11 @@ CREATE TABLE `cliente` (
 
 CREATE TABLE `pedido` (
   `id_pedido` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `id_produto` int(11) NOT NULL,
   `quantidade` int(11) NOT NULL,
-  `entrega` date NOT NULL,
-  `status` tinyint(1) NOT NULL
+  `status` int(1) NOT NULL,
+  `data_pedido` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -71,74 +74,72 @@ CREATE TABLE `pedido` (
 
 CREATE TABLE `produtos` (
   `id_produto` int(11) NOT NULL,
-  `nome` varchar(255) NOT NULL,
+  `nome` varchar(100) NOT NULL,
   `descricaoProd` varchar(255) NOT NULL,
-  `formula` varchar(255) NOT NULL,
-  `estoqueMin` varchar(255) NOT NULL,
-  `unidadeMed` varchar(255) NOT NULL,
-  `fornecedor` varchar(255) NOT NULL,
-  `Fabricante` varchar(255) NOT NULL,
-  `precoMed` varchar(255) NOT NULL,
-  `lote` varchar(255) NOT NULL,
-  `descricaoTec` varchar(255) NOT NULL,
-  `obs` varchar(255) NOT NULL
+  `formula` varchar(50) NOT NULL,
+  `estoque` int(5) NOT NULL,
+  `unidadeMed` varchar(5) DEFAULT NULL,
+  `fornecedor` varchar(100) NOT NULL,
+  `Fabricante` varchar(50) NOT NULL,
+  `preco` varchar(12) NOT NULL,
+  `lote` int(10) NOT NULL,
+  `descricaoTec` varchar(255) DEFAULT NULL,
+  `obs` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Extraindo dados da tabela `produtos`
 --
 
-INSERT INTO `produtos` (`id_produto`, `nome`, `descricaoProd`, `formula`, `estoqueMin`, `unidadeMed`, `fornecedor`, `Fabricante`, `precoMed`, `lote`, `descricaoTec`, `obs`) VALUES
-(3, 'óleo diesel', 'óleo para motor de caminhonetes, caminões, etc', '', '20', '60L', 'petrobrás', 'eu mesmo', 'R$700', '233', 'é óleo dieseeeeeel', ''),
-(4, 'coca cola', 'coquinha gelada uhmmmmm', 'coca+cola', '20', '2L', 'mercado', 'COCACOLA', 'r$15', '20', 'É COCA MANO', 'Gelo e limão??????'),
-(5, 'água', 'água é dooois', 'H2O', '20', '550ml', 'mercado', 'COCACOLA', 'r$5', '522', 'é águaaaaaaaa', 'hidrate-se meu mano'),
-(6, 'TANG DE MORANGO', 'suquinho de pó', 'água + pozinho', '60', '15g', 'mercado', 'TANG', 'r$0,75', '14', 'suquito de moranguito', 'dá câncer');
+INSERT INTO `produtos` (`id_produto`, `nome`, `descricaoProd`, `formula`, `estoque`, `unidadeMed`, `fornecedor`, `Fabricante`, `preco`, `lote`, `descricaoTec`, `obs`) VALUES
+(1, 'Gluconato de Clorexidina', 'Substância com ação antimicrobiana, eficaz no controle da proliferação de bactérias na pele e mucosas, sendo um produto muito utilizado como antisséptico na prevenção de infecções.', 'C22H30Cl2N10', 1, '', 'AlphaQuímica', 'AlphaQuímica', 'R$ 50.00', 1, '', ''),
+(3, 'Soro Fisiológico', 'É uma solução isotônica em relação aos líquidos corporais que contem 0,9%, em massa, de NaCl em água destilada', 'NaCl+H2O', 1, '', 'SoriMax', 'SoriMax', 'R$ 12.00', 1, '', '');
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `cliente`
+-- Índices para tabela `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`),
-  ADD UNIQUE KEY `cnpj` (`cnpj`),
-  ADD UNIQUE KEY `ie` (`ie`);
+  ADD UNIQUE KEY `cnpj` (`cnpj`);
 
 --
--- Indexes for table `pedido`
+-- Índices para tabela `pedido`
 --
 ALTER TABLE `pedido`
   ADD PRIMARY KEY (`id_pedido`);
 
 --
--- Indexes for table `produtos`
+-- Índices para tabela `produtos`
 --
 ALTER TABLE `produtos`
-  ADD PRIMARY KEY (`id_produto`);
+  ADD PRIMARY KEY (`id_produto`),
+  ADD UNIQUE KEY `formula` (`formula`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `cliente`
+-- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `pedido`
+-- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
   MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `produtos`
+-- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
