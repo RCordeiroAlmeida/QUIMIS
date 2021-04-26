@@ -37,7 +37,7 @@
                 </script>
             ";
         }else{
-            $query = "UPDATE produtos SET nome='$nome', descricaoProd='$descricaoProd', formula='$formula', estoqueMin='$estoqueMin', unidadeMed='$unidadeMed', fornecedor='$fornecedor', fabricante='$fabricante', precoMed='$precoMed', 
+            $query = "UPDATE produtos SET nome='$nome', descricaoProd='$descricaoProd', formula='$formula', estoque='$estoqueMin', unidadeMed='$unidadeMed', fornecedor='$fornecedor', fabricante='$fabricante', preco='$precoMed', 
             lote='$lote', descricaoTec='$descricaoTec', obs='$obs' WHERE id_produto = $id";
             //echo $query;exit;
             $update = mysqli_query($conexao,$query);

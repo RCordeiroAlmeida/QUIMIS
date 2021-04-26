@@ -41,7 +41,7 @@
                 </div>
                 <div class="input-field col s12">   
                     <label for="email">E-mail <span style="color: red">*</span></label>
-                    <input type="email" name="email" id="email" required/>
+                    <input type="email" name="email" id="email" class= "validate" required/>
                 </div>
                 <script>
         

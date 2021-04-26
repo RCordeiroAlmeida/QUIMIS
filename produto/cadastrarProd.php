@@ -31,8 +31,8 @@
                 <input type="text" id="formula" name= 'formula' maxlength = "50" required>
             </div>
             <div class="input-field col s12">
-                <label for="estoqueMin">Estoque mínimo <span style="color: red;">*</span></label>
-                <input type="number" name="estoqueMin" id="estoqueMin" maxlength="5">
+                <label for="estoqueMin">Quantidade: <span style="color: red;">*</span></label>
+                <input type="number" name="estoque" id="estoqueMin" maxlength="5">
             </div>
             <div class="input-field col s12">
                 <label for="unidadeMed">Unidade media</label>
@@ -48,7 +48,7 @@
             </div>
             <div class="input-field col s12">
                 <label for="precoMed">Preço <span style="color: red;">*</span></label>
-                <input type="text" name="precoMed" class="form-control" onkeypress="$(this).mask('R$ 999.990,00')" required/>
+                <input type="text" name="preco" class="form-control" onkeypress="$(this).mask('R$ 999.990,00')" required/>
             </div>
             <div class="input-field col s12">
                 <label for="lote">Lote <span style="color: red;">*</span></label>

@@ -50,7 +50,7 @@
                 ";
             }else{
 
-                $query = "INSERT INTO produtos (nome, descricaoProd, formula, estoqueMin, unidadeMed, fornecedor, fabricante, precoMed, lote, descricaoTec, obs)
+                $query = "INSERT INTO produtos (nome, descricaoProd, formula, estoque, unidadeMed, fornecedor, fabricante, preco, lote, descricaoTec, obs)
                 VALUES('$nome', '$descricaoProd', '$formula', '$estoqueMin', '$unidadeMed', '$fornecedor', '$fabricante', '$precoMed', '$lote', '$descricaoTec', '$obs')";
                 #echo $query;exit;
 
