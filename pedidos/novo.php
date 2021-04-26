@@ -35,7 +35,7 @@
                             $_SESSION['cliente'] = $_POST['nome'];
 
                             echo "
-                                <h5 class ='light'>Olá <strong>$_SESSION[adm]</strong>, você está realizando o pedido de: <strong style='color: green'>$_SESSION[nome]</strong> </h5>
+                                <h5 class ='light'>Olá <strong>$_SESSION[adm]</strong>, você está realizando o pedido do cliente: <strong style='color: green'>$_SESSION[cliente]</strong> </h5>
 
                                 </br>
                             ";
@@ -44,6 +44,7 @@
                             $execut = mysqli_query($conexao,$query);
                             
                             while($produto = mysqli_fetch_array($execut)){
+                                //var_dump($produto);
                                 echo "
                                     <tbody>
                                         <tr>
@@ -103,10 +104,10 @@
                                                     <option value='49'>49</option>
                                                     <option value='50'>50</option>
                                                 </select>
+                                                
                                             </td>
                                             <td>
-                                                <input type = 'hidden' name='id_produto' value='$produto[id_produto]'/>
-                                                <button type= 'submit'><img src='../css/carrinho.svg' alt='carrinho de compras'></button>
+                                                <button type= 'submit' name='id_produto' value='$produto[id_produto]'><img src='../css/carrinho.svg' alt='carrinho de compras'></button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -114,19 +115,19 @@
                             }  
                         ?>
                     </table>
-                    <?php
-                        echo "
-                            </br>
-                            <div class='input field col s12'>
-                                <button type = 'submit' class='waves-effect waves-green btn-flat'>Finalizar</button>
-                                <a href='../cliente/clientes.php' class='waves-effect waves-green btn-flat'><i class='material-icons left'>arrow_back</i>Voltar</a>
-                            <div>           
-                        ";
-                    
-                    ?>
             </form>
         </div>
     </div>
+    <?php
+        echo "
+            </br>
+            <div class='input-field col s12'> 
+                <button type = 'submit' class=' waves-effect waves-green btn green'>Finalizar</button>
+                <a href='../cliente/clientes.php' class='btn waves-effect waves light red'>Voltar</a>
+            <div>           
+        ";
+
+    ?>
 </body>
 <!--JavaScript at end of body for optimized loading-->
     <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>

@@ -29,11 +29,11 @@
                 $nome = $dados['nome'];
                 $desc = $dados['descricaoProd'];
                 $form = $dados['formula'];
-                $estoq = $dados['estoqueMin'];
+                $estoq = $dados['estoque'];
                 $uni = $dados ['unidadeMed'];
                 $fornecedor = $dados['fornecedor'];
                 $fab = $dados['Fabricante'];
-                $preco = $dados['precoMed'];
+                $preco = $dados['preco'];
                 $lote = $dados['lote'];
                 $desctec = $dados['descricaoTec'];
                 $obs = $dados['obs'];

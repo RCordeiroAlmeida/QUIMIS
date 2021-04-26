@@ -202,6 +202,8 @@
                 6 => $estado
             );
 
+            var_dump($input);exit;
+            if(isset($cliente) && isset($cnpj) && isset($email))
             if (notNull($input)) {
                 echo"
                     <script>

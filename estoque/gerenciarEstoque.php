@@ -55,8 +55,8 @@
                 while($dados = mysqli_fetch_array($execut)){
                     $id = $dados['id_produto'];
                     $nome = $dados['nome'];
-                    $preço = $dados['precoMed'];
-                    $estoq = $dados['estoqueMin'];
+                    $preço = $dados['preco'];
+                    $estoq = $dados['estoque'];
 
                     echo " 
                         <tbody id = 'myTable'>
