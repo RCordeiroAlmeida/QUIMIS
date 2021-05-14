@@ -15,7 +15,7 @@
 <body>
     <div class = 'row'>
         <div class="center-align">
-            <form action = 'detalhes.php' method = 'POST'>
+            <form action = 'carrinho.php' method = 'get'>
                     <table class="highlight centered responsive-table">
                         <thead>
                             <tr>
@@ -31,7 +31,7 @@
 
                             session_start();
                             $_SESSION['adm'] = "Janaina";
-                            $_SESSION['id_cliente'] = $_POST['id_cliente'];
+                            $_SESSION['idcliente'] = $_POST['id_cliente'];
                             $_SESSION['cliente'] = $_POST['nome'];
 
                             echo "
@@ -107,7 +107,7 @@
                                                 
                                             </td>
                                             <td>
-                                                <button type= 'submit' name='id_produto' value='$produto[id_produto]'><img src='../css/carrinho.svg' alt='carrinho de compras'></button>
+                                                <button type= 'submit' name='id' value='$produto[id_produto]'><img src='../css/carrinho.svg' alt='carrinho de compras'></button>
                                             </td>
                                         </tr>
                                     </tbody>
@@ -128,7 +128,7 @@
         ";
 
     ?>
-</body>
+</body  >
 <!--JavaScript at end of body for optimized loading-->
     <script src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js'></script>
