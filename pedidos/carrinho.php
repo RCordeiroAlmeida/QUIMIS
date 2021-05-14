@@ -8,13 +8,14 @@
 </head>
 <body>
     <?php
-        session_start();
-        $_SESSION['qtdd'] = $_GET['qtdd'];
-        $_SESSION['idproduto'] = $_GET['id'];
+        if (isset($_GET['id'])) {
+            session_start();
+            $_SESSION['idproduto'] = $_GET['id'];
+            print_r($_SESSION);
 
-        $sql = $conexao -> query("INSERT INTO carrinho (id_pedido)VALUES   ")
-
-        echo "Ola $_SESSION[adm], você inseriu $_SESSION[qtdd] unidades de $_SESSION[idproduto] no carrinho do $_SESSION[cliente]";
+        }
     ?>
+    <div>
+    </div>
 </body>
 </html>
