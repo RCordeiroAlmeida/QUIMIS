@@ -62,7 +62,7 @@
                                 <td>
                                     <form action='visualizarCliente.php' method='POST'>
                                         <input type = 'hidden' name = 'id_cliente' value = '$id'/>
-                                        <button type='submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
+                                        <button type = 'submit' class='btn waves-effect waves-light blue'><i class='material-icons'>remove_red_eye</i></button>
                                     </form>
                                 </td>
                                 <td>$nome</td>
