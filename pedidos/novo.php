@@ -1,9 +1,12 @@
 <?php
     require_once "../banco/conexao.php";
-    print_r($id_cliente);exit;
-    $sql = $conexao -> query("SELECT nome FROM cliente WHERE id_cliente=".$id_cliente);
+
+    
+    //print_r($_POST);exit;
+    $sql = $conexao -> query("SELECT nome FROM cliente WHERE id_cliente=".$_POST['id_cliente']);
     $cliente = mysqli_fetch_array($sql);
-    echo $cliente['nome'];exit;
+    //print_r ($cliente);exit;
+    
 ?>
 <!DOCTYPE html>
 <html lang='pt-br'>
@@ -35,7 +38,7 @@
                             $_SESSION['adm'] = "Janaina"; 
 
                             echo "
-                                <h5 class ='light'>Olá <strong>$_SESSION[adm]</strong>, você está realizando o pedido do cliente: <strong style='color: green'>$_SESSION[cliente]</strong> </h5>
+                                <h5 class ='light'>Olá <strong>$_SESSION[adm]</strong>, você está realizando o pedido do cliente: <strong style='color: green'>$cliente[nome]</strong> </h5>
 
                                 </br>
                             ";
